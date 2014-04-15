@@ -69,9 +69,9 @@ extras_require = dict(map(
 packages = find_packages(exclude=['docs'])
 
 setup(
-    name='Invenio Demosite',
+    name='Invenio DPHEP',
     version='1.9999-dev',
-    url='https://github.com/inveniosoftware/invenio-demosite',
+    url='https://github.com/pamfilos/invenio-dphep.git',
     license='GPLv2',
     author='CERN',
     author_email='info@invenio-software.org',
@@ -96,8 +96,8 @@ setup(
     ],
     entry_points={
         'invenio.config': [
-            "demosite = invenio_demosite.config"
+            "dphep = invenio_dphep.config"
         ]
     },
-    test_suite='invenio_demosite.testsuite.suite'
+    test_suite='invenio_dphep.testsuite.suite'
 )
