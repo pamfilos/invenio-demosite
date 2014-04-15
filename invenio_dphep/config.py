@@ -18,11 +18,11 @@
 ## 59 Temple Place, Suite 330, Boston, MA 02D111-1307, USA.
 
 PACKAGES = [
-    "invenio_demosite.base",
-    "invenio_demosite.modules.*",
+    "invenio_dphep.base",
+    "invenio_dphep.modules.*",
     "invenio.modules.*",
 ]
 
 DEPOSIT_TYPES = [
-    'invenio_demosite.modules.deposit.workflows.article.article',
+    'invenio_dphep.modules.deposit.workflows.article.article',
 ]
