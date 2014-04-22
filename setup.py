@@ -96,7 +96,7 @@ setup(
     ],
     entry_points={
         'invenio.config': [
-            "dphep = invenio_dphep.config"
+            "invenio_dphep = invenio_dphep.config"
         ]
     },
     test_suite='invenio_dphep.testsuite.suite'
