@@ -1,0 +1,545 @@
+{% extends "page.html" %}
+
+{%- js 'js/readmore.js' %}
+<!-- HERE starts the HEADER -->
+{% block header %}
+	{{ super() }}
+
+{% endblock header %}
+<!-- HERE ends the HEADER -->
+
+
+<!-- HERE starts the BODY -->
+{% block body %}
+<style>
+
+.record-blk {
+	background-color: #e6e6e6;
+}
+
+.record-blk .goto-link {
+	float: right;
+	background-color: #2B364F;
+	border-radius: 3px;
+	color: #fff;
+	padding: 7px;
+	font-size: 12px;
+	border: none;
+}
+
+.record-blk .tag-wrapper {
+	margin: 15px 0;
+	float: left;
+	padding: 10px 0 5px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;	
+}
+
+.tag-wrapper .tag-box {
+	padding: 5px 10px;
+	font-size: 12px;
+	border-radius: 3px;
+	/*background-color: #666;*/
+	color: #fff;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	float: left;
+}
+
+.tag-bkey {
+	background-color: #333;
+}
+
+.tag-btopic {
+	background-color: #2B364F;
+}
+
+.tag-bdomain {
+	background-color: #4C7EB0;
+}
+
+.tag-bcountry {
+	background-color: #666;
+}
+
+.record-blk > div header {
+	background-color: #ccc;
+	color: #fff;
+	padding: 5px;
+}
+
+.pad2mar{
+	padding: 0;
+	margin: 0 15px;
+}
+
+
+.rec-info {
+	margin-right: 15px;
+	background-color: #fff;
+}
+
+.rec-meminfo {
+	margin: 0;
+	background-color: #fff;
+}
+
+.info-box {
+	background-color: #fff;
+	min-height: 120px;
+	margin-bottom: 15px;
+	font-size: 13px;
+}
+
+.info-box span {
+	color: #333;
+	font-size:12px;
+}
+
+.info-box > div {
+	/*padding: 5px;*/
+	color: #ccc;
+}
+
+span.sp-left {
+	font-weight: bold;
+	width: 40%;
+	padding-left: 3px;
+	/*background-color: #eee;*/
+}
+
+span.sp-right {
+	width: 60%;
+	padding: 0 5px;
+	/*background-color: #e6e6e6;*/
+	text-align: end;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.info > div:nth-child(2n) {
+	background-color: #eee;
+}
+
+.info > div:nth-child(2n+1) {
+	background-color: #fff;
+}
+
+.info > span {
+	margin-bottom: 1px;
+	padding-bottom: 2px;
+	padding-top: 1px;
+}
+
+.info-box header {
+	text-align: left;
+}
+
+.info > div {
+	width: 100%;
+	height: 20px;
+}
+
+.rltd-links {
+	width: 100%;
+	height: 100px;
+	margin: 5px;
+	margin-bottom: 0;
+}
+
+.rltd-links ul{
+	padding: 0;
+	margin: 0;
+
+}
+
+ul.thumbs {
+	padding: 0;
+	/*margin: 10px;*/
+	list-style: none;
+	float: left;
+}
+
+li.thumb {
+	list-style: none;
+	height: 60px;
+	padding: 5px;
+	display: inline-block;
+	width: 100%;
+	background-color: #eee;
+	border-radius: 2px;
+}
+
+li.thumb ul {
+	padding: 0;
+}
+
+
+li.thumb ul li{
+	list-style: none;
+	float: left;
+}
+
+li.thumb ul li h4{
+	margin: 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+li.thumb ul li h5{
+	margin: 5px;
+	font-size: 13px;
+	margin-left: 0;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+
+li.thumb li p {
+	display: table-cell;
+	vertical-align: middle;
+}
+.doc-box {
+	display: inline-block;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.similar {
+
+}
+
+.doc-box li.thumb ul li:first-child {
+	border-right: 1px solid #fff;
+	height: 50px;
+	padding-right: 5px;
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+.doc-box li.thumb:nth-child(2n) {
+	background-color: #fff;
+}
+
+.doc-box li.thumb:nth-child(2n+1){
+	background-color: #eee;
+}
+
+.rltd-links ul li {
+	list-style: none;
+}
+
+.info-box a, .info-box a:hover, .info-box a:visited {
+	color: #428bca;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.pol-info >div > div:first-child {
+	color: #333;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	margin: 5px;
+}
+
+.rec-info >div > div:first-child {
+	color: #333;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	margin: 5px;
+}
+
+.readmore-js-section {
+	text-align: justify;
+}
+
+.reviews {
+	display: inline-block;
+}
+
+.reviews .review-box {
+	height: 50px;
+	padding: 0;
+	color: #666;
+}
+
+.review-box ul, .review-box li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	height: 50px;
+}
+
+.reviews .review-box:nth-child(2n){
+	background-color: #fff;
+}
+
+.reviews .review-box:nth-child(2n+1) {
+	background-color: #eee;
+}
+
+.review-box > li > span {
+
+}
+
+.review-box li span.glyphicon {
+	font-size: 20px;
+	padding: 3px;
+}
+
+.review-box li span:last-child{
+	padding-left: 3px;
+	font-size: 11px;
+}
+
+.review-box ul > li {
+	padding: 3px;
+}
+
+.review-box ul > li:last-child {
+	padding: 5px;
+}
+
+.review-sub {
+	background-color: #ccc;
+	display: inline-block;
+	padding: 5px;
+}
+
+.review-sub textarea {
+	width: 90%;
+	max-width: 90%;	
+	float: left;
+}
+
+.review-sub button, .review-sub button:hover {
+	color: #fff;
+	width: 9%;
+	height: 75px;
+	margin-left: 1%;
+	background-color: #2B364F;
+	position: absolute;
+	bottom: 5px;
+}
+
+</style>
+
+
+<section class="content">
+	<div class="container">
+		<div class="record-blk col-md-offsegt-1 col-md-12">
+			<h2>Policy Ttitle</h2>
+			<h3>Policy Subtitle</h3>
+			<div style="margin-bottom:15px;">
+				<span style="float:left;" class="pamfilos">by <a href="#">FName LName</a>, <a href="#">FName2 LName2</a><br/>
+					@ <a href="">CERN</a>, <a href="#">instituteName2</a>
+				</span>
+				<button class="goto-link">DOWNLOAD POLICY</button>
+			</div>
+			<div class="tag-wrapper">
+				<span class="tag-box tag-bkey">tag_1</span>
+				<span class="tag-box tag-bkey">tag_2</span>
+				<span class="tag-box tag-bkey">tag_3</span>
+				<span class="tag-box tag-bkey">tag_4</span>
+				<span class="tag-box tag-bkey">tag_5</span>
+				<span class="tag-box tag-bkey">tag_6</span>
+				<span class="tag-box tag-btopic">topic_1</span>
+				<span class="tag-box tag-btopic">topic_2</span>
+				<span class="tag-box tag-btopic">topic_3</span>
+				<span class="tag-box tag-bdomain">domain_1</span>
+				<span class="tag-box tag-bdomain">domain_2</span>
+				<span class="tag-box tag-bdomain">domain_3</span>
+				<span class="tag-box tag-bdomain">domain_4</span>
+				<span class="tag-box tag-bdomain">domain_5</span>
+				<span class="tag-box tag-bcountry">COUNTRY_1</span>
+				<span class="tag-box tag-bcountry">COUNTRY_2</span>
+				<span class="tag-box tag-btopic">topic_2</span>
+				<span class="tag-box tag-btopic">topic_3</span>
+				<span class="tag-box tag-bdomain">domain_1</span>
+				<span class="tag-box tag-bdomain">domain_2</span>
+			</div>
+			<div class="no-padding col-md-9 pull-left">
+				<div class="info-box pol-info" style="margin-right:15px;">
+					<header>Policy Summary</header>
+					<div class="" style="padding:5px;height:400px;">
+						<div class="fix-overflow" style="height:300px;">
+							<span>This policy describes the CMS principles of data preservation, re-use and open access, as well as the relevant actors in all these tasks and their roles and responsibilities. CMS understands that in order to fully exploit all these re-use opportunities, immediate and continued resources are needed. The level of support that CMS will be able to provide to external users depends on the available funding. This policy addresses the moral responsibility of CMS for its data, as well as the increasing concern of funding agencies worldwide and the civil society or the preservation and re-use of scientific data.This policy describes the CMS principles of data preservation, re-use and open access, as well as the relevant actors in all these tasks and their roles and responsibilities. CMS understands that in order to fully exploit all these re-use opportunities, immediate and continued resources are needed. The This policy describes the CMS principles of data preservation, re-use and open access, as well as the relevant actors in all these tasks and their roles and responsibilities. CMS understands that in order to fully exploit all these re-use opportunities, immediate and continued resources are needed. The level of support that CMS will be able to provide to external users depends on the available funding. This policy addresses the moral responsibility of CMS for its data, as well as the increasing concern of funding agencies worldwide and the civil society for the preservation and re-use of scientific data.This policy describes the CMS principles of data preservation, re-use and open access, as well as the relevant actors in all these tasks and their roles and responsibilities. CMS understands that in order to fully exploit all these re-use opportunities, immediate and continued resources are needed.responsibility of CMS for its data, as well as the increasing concern of funding agencies worldwide and the civil society for the preservation and re-use of scientific data.This policy describes the CMS principles of data preservation, re-use and open access, as well as the relevant actors in all these tasks and their roles and responsibilities. CMS understands that in order to fully exploit all these re-use opportunities, immediate and continued resources are needed.</span>
+						</div>
+						<div class="rltd-links">
+							<h5>Related Links</h5>
+							<ul>
+								<li><a href="#">http://www.cern.ch</a> </li>
+								<li><a href="">http://cms.policies.cern.ch</a> </li>
+								<li><a href="">http://www.example.com/r/12345</a></li>
+								<li><a href="#">http://www.cern.ch</a> </li>
+								<li><a href="">http://cms.policies.cern.ch</a> </li>
+								<li><a href="">http://www.example.com/r/12345</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pol-geninfo no-padding col-md-3 pull-right">
+				<div class="info-box" style="height:206px;">
+					<header>General Info</header>
+					<div class="info">
+						<div>
+							<span class="sp-left col-md-4">Title:</span><span class="sp-right col-md-8">LHCb Public Note</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Issue:</span><span class="sp-right col-md-8">1</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Revision</span><span class="sp-right col-md-8">1</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Reference:</span><span class="sp-right col-md-8"><a href="">LHCb-PUB-2012-003</a></span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Prepared by:</span><span class="sp-right col-md-8"><a href="">LHCb</a>, <a href="">P.Clarke</a>(Editor)</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Created:</span><span class="sp-right col-md-8">22th April 2013</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Last modified:</span><span class="sp-right col-md-8">22th April 2013</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="no-padding col-md-3 pull-right">                
+				<div class="info-box" style="height:206px">
+					<header>Contact Details</header>
+					<div class="info">
+						<div>
+							<span class="sp-left col-md-4">Name:</span><span class="sp-right col-md-8">P.Clarke</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Email:</span><span class="sp-right col-md-8" href="mailto:p.clarke@cern.test.ch">p.clarke@cern.ch</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Phone:</span><span class="sp-right col-md-8">0123456789</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Website:</span><span class="sp-right col-md-8">-</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Twitter:</span><span class="sp-right col-md-8">-</span>
+						</div>
+						<div>
+							<span class="sp-left col-md-4">Google+:</span><span class="sp-right col-md-8">-</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 no-padding" style="padding-right:15px;">
+				<div class="info-box doc-box col-md-12">
+					<header>Documents</header>
+					<ul class="thumbs">
+						<li class="thumb">
+							
+								<ul>
+									<li><h4>Title of File 1</h4><h5>policy-name-file_1</h5></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/pdf.png') }}" alt=""></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/doc.png') }}" "./img/ft-icons/doc.png" alt=""></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/tiff.png') }}" alt=""></li>
+								</ul>
+							
+						</li>
+						<li class="thumb">
+								<ul>
+									<li><h4>Title of File 2</h4><h5>policy-name-file_2</h5></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/pdf.png') }}" alt="">   </li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/doc.png') }}" alt=""></li>
+								</ul>
+						</li>
+						<li class="thumb">
+								<ul>
+									<li><h4>Title of File 3</h4><h5>policy-name-file_3</h5></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/pdf.png') }}" alt=""></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/doc.png') }}" alt=""></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/tiff.png') }}" alt=""></li>
+								</ul>
+						</li>
+						<li class="thumb">
+								<ul>
+									<li><h4>Title of File 4</h4><h5>policy-name-file_4</h5></li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/pdf.png') }}" alt="">   </li>
+									<li><img src="{{ url_for('static', filename='img/ft-icons/doc.png') }}" alt=""></li>
+								</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4 no-padding">
+				<div class="info-box similar">
+					<header>Similar Records</header>
+
+				</div>
+			</div>
+			<div class="info-box reviews col-md-12 no-padding">
+				<header>Reviews</header>
+				<div class="review-box">
+					<ul>
+						<li class="col-md-2">
+							<span class="glyphicon glyphicon-user"></span>
+							<span><a href="">John Doe</a></span><br/>
+							<span>Posted: 31/03/14 15:46</span>
+						</li>
+						<li class="col-md-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, facere, maxime, at quibusdam dicta quos voluptatibus modi amet nostrum harum delectus dolore natus pariatur similique inventore quasi perferendis eveniet. Rerum.  </li>
+					</ul>
+				</div>
+				<div class="review-box">
+					<ul>
+						<li class="col-md-2">
+							<span class="glyphicon glyphicon-user"></span>
+							<span><a href="">Alice B</a></span><br>
+							<span>Posted: 31/03/14 17:23</span>
+						</li>
+						<li class="col-md-10">Lorem ipsum dolor sit amet!!</li>
+					</ul>
+				</div>
+				<div class="review-box">
+					<ul>
+						<li class="col-md-2">
+							<span class="glyphicon glyphicon-user"></span>
+							<span><a href="">James L</a></span><br>
+							<span>Posted: 03/04/14 11:04</span>
+						</li>
+						<li class="col-md-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, molestias optio perferendis atque temporibus ut nobis earum quis?</li>
+					</ul>
+				</div>
+				<div class="review-sub col-md-12">
+					<textarea class="form-control" rows="3" type="text" placeholder="Insert your review"></textarea>
+					<button type="submit" class="btn">Post Review</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock body %}
+<!-- HERE ends the BODY -->
+
+{% block javascript %}
+	{{ super() }}
+    <script>
+        $(".fix-overflow").readmore({
+            maxHeight: 200,
+            moreLink: '<a href="#">Read more</a>',
+            lessLink: '<a href="#">Close</a>',
+            embedCSS: true,
+            beforeToggle: function(trgr, el, expanded){
+                if(expanded){
+                    $(".rltd-links ul").slideToggle(100);
+                }
+            },
+            afterToggle: function(trgr, el, expanded){
+                if(!expanded){
+                    $(".rltd-links ul").slideDown();
+                }
+            }
+        });
+    </script>
+{% endblock javascript%}
+

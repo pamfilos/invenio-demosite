@@ -1,0 +1,3 @@
+[invenio.config]
+invenio_dphep = invenio_dphep.config
+

@@ -1,0 +1,279 @@
+{% extends "page.html" %}
+
+{% css 'css/icomoon/icomoon.css' %}
+
+
+{% block page_body %}
+{% block body %}
+<style>
+.pressbox > div {
+    margin-bottom: 30px;
+}
+
+.pressbox .mediabox {
+    border: 1px solid #c9c9c9;
+}
+
+.pressbox .title >span {
+}
+
+.pressbox .mediabox img {
+    height: 250px;
+}
+
+.pressbox .mediabox .title{
+    padding: 10px;
+    border-bottom: 1px solid #c9c9c9;
+    border-top: 1px solid #c9c9c9;
+    font-weight: bold;
+}
+
+.pressbox .mediabox .title span:first-child{
+    font-size: 15px;
+}
+
+.pressbox .mediabox .title span:last-child{
+    font-size: 11px;
+    color:  #428bca;
+}
+
+.pressbox .mediabox .share {
+    padding: 10px;
+    background-color: #F5F5F5;
+    color: #ACACAC;
+    font-size: 12px;
+}
+
+.pressbox .mediabox .share span:first-child {
+    padding-right: 10px;
+}
+
+.pressbox .mediabox .share span:nth-child(n+2){
+    padding-right: 3px;
+    font-size: 15px;
+}
+
+.pressbox .fb_news {
+    background-color: #3B5999;
+    height: 353px;
+}
+
+.pressbox .fb_news {
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.pressbox .fb_news .title {
+
+}
+.pressbox .fb_news .title div{
+    float: left;
+}
+
+.pressbox .fb_news .title div:nth-child(1){
+    width: 20%;
+}
+
+.pressbox .fb_news .title div:nth-child(2){
+    font-weight: normal;
+    display: inline-block;
+    width: 60%;
+    overflow: hidden;
+}
+
+.pressbox .fb_news .title div:nth-child(3){
+    width: 20%;
+}
+
+.pressbox .mediabox .photo {
+    overflow: hidden;
+}
+
+.pressbox .tw_news {
+    background-color: #4099FF;
+}
+
+.pressbox .tw_news {
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    height: 353px;
+
+}
+
+.pressbox .tw_news .title div{
+    float: left;
+}
+
+.pressbox .tw_news .title div:nth-child(1){
+    width: 20%;
+}
+
+.pressbox .tw_news .title div:nth-child(2){
+    font-weight: normal;
+    display: inline-block;
+    width: 60%;
+    overflow: hidden;
+}
+
+.pressbox .tw_news .title div:nth-child(3){
+    width: 20%;
+}
+.pressbox .mediabox .photo {
+    overflow: hidden;
+}
+
+.pressbox [class*=_news] .title {
+    height: 15%;
+}
+
+.pressbox [class*=_news] .message {
+    height: 75%;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 16px;
+    overflow-wrap: break-word;
+}
+
+.pressbox [class*=_news] [class*=icon]:last-child {
+    height: 10%;
+    font-weight: bold;
+}
+
+.pressbox [class*=_news] [class*=icon]:last-child span:first-child{
+    padding-right: 10px;
+}
+</style>
+
+    <section class="content">
+        <div class="container">
+            <div class="contenttitle col-md-12">
+                <span>CURRENTLY SHOWING NEWS FROM <b>ALL</b></span>
+                <div class="btn-group pull-right">
+                <span style="float:left;font-size:14px;padding;1px;">SORTED BY</span>
+                <button id="sortPos" class="sort btn" data-sort="exppos">Date</button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="#">Source</a></li>
+                    <li><a tabindex="-1" href="#">Title</a></li>
+                    <li><a tabindex="-1" href="#">Authour</a></li> 
+                </ul>
+                </div>
+            </div>
+            <div class="col-md-12 pressbox">
+                <div class="col-md-3">
+                    <div class="mediabox">
+                    <div class="photo"><img src="img/ups/image1.jpg" alt=""></div>
+                    <div class="title">
+                        <span>SYMMETRY MAGAZINE</span><br/>
+                        <span>Posted on 1 Nov 2009</span>
+                    </div>
+                    <div class="share">
+                        <span>Share this page</span>
+                        <span class="icon-reddit"></span>
+                        <span class="icon-delicious"></span>
+                        <span class="icon-googleplus3"></span>
+                        <span class="icon-facebook"></span>
+                        <span class="icon-twitter"></span>
+                        <span class="icon-stumbleupon2"></span>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mediabox">
+                    <div class="photo"><img src="img/ups/image2.png" alt=""></div>
+                    <div class="title">
+                        <span>BERLINER ZEITUNG</span><br/>
+                        <span>Posted on 1 Feb 2010</span>
+                    </div>
+                    <div class="share">
+                        <span>Share this page</span>
+                        <span class="icon-reddit"></span>
+                        <span class="icon-delicious"></span>
+                        <span class="icon-googleplus3"></span>
+                        <span class="icon-facebook"></span>
+                        <span class="icon-twitter"></span>
+                        <span class="icon-stumbleupon2"></span>
+                    </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="fb_news">
+                        <div class="title">
+                            <div class="icon-facebook" style="font-size:25px;"></div>
+                            <div>DPHEP@CERN</div>
+                            <div>26DEC</div>
+                        </div>
+                        <div class="message">
+                            <span>#DPHEP news: registration for IPRES now open. Conference website: http://ipres2013.ist.utl.pt/index.html</span>
+                        </div>
+                        <span class="icon-thumbs-up">  LIKE</span>
+                    </div>
+                </div>
+                                <div class="col-md-3">
+                    <div class="tw_news">
+                        <div class="title">
+                            <div class="icon-twitter" style="font-size:25px;"></div>
+                            <div>@APARSENproject</div>
+                            <div>26DEC</div>
+                        </div>
+                        <div class="message">
+                        <span>Registration re-opened - #APARSEN, @SCIDIPES, @Eudat_eu, #DPHEP workshop tomorrow! http://bit.ly/1fESoqX  #DataPreservation  #RDAPlenary</span>     
+                        </div>
+                        <span class="icon-loop">  RETWEET</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="fb_news">
+                        <div class="title">
+                            <div class="icon-facebook" style="font-size:25px;"></div>
+                            <div>DPHEP@CERN</div>
+                            <div>26DEC</div>
+                        </div>
+                        <div class="message">
+                            <span>#DPHEP news: registration for IPRES now open. Conference website: http://ipres2013.ist.utl.pt/index.html</span>
+                        </div>
+                        <span class="icon-thumbs-up">  LIKE</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mediabox">
+                    <div class="photo"><img src="img/ups/image3.png" alt=""></div>
+                    <div class="title">
+                        <span>SCIENCE MAGAZINE</span><br/>
+                        <span>Posted on 1 Feb 2010</span>
+                    </div>
+                    <div class="share">
+                        <span>Share this page</span>
+                        <span class="icon-reddit"></span>
+                        <span class="icon-delicious"></span>
+                        <span class="icon-googleplus3"></span>
+                        <span class="icon-facebook"></span>
+                        <span class="icon-twitter"></span>
+                        <span class="icon-stumbleupon2"></span>
+                    </div>
+
+                    </div>
+                </div>
+
+                
+                
+            </div>
+            
+        </div>
+    </section>
+
+
+{% endblock body %}
+{% endblock page_body %}
+
+{% block javascript %}
+
+
+{% endblock javascript %}

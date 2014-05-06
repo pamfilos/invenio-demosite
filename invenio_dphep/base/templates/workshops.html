@@ -1,0 +1,209 @@
+{% extends "page.html" %}
+
+
+{% block head %}
+{{ super() }}
+
+{% endblock head %}
+
+{%- css 'css/workshop.css' -%}
+{%- css 'css/home.css' -%}
+{%- css 'css/icomoon/icomoon.css' -%}
+<!-- HERE starts the HEADER -->
+{% block header %}
+	{{ super() }}
+
+{% endblock header %}
+<!-- HERE ends the HEADER -->
+
+
+
+
+<!-- HERE starts the BODY -->
+{% block page_body %}
+{% block body %}
+<section class="content">
+<div class="container">
+<div class="contenttitle">
+	<span>CURRENTLY SHOWING <b>ALL EVENTS</b></span>
+</div>
+
+<div class="workshop-utils col-md-12 no-padding">
+	<div class="events head">
+		<ul>
+			<li class="col-md-4">Workshop Title  <span class="glyphicon glyphicon-sort"></span></li>
+			<li class="col-md-2">Date  <span class="glyphicon glyphicon-sort"></span></li>
+			<li class="col-md-2">Location  <span class="glyphicon glyphicon-sort"></span></li>
+			<li class="col-md-2">Country/Place  <span class="glyphicon glyphicon-sort"></span></li>
+			<li class="col-md-2"></li>
+		</ul>
+	</div>
+</div>
+<div class="workshops panel-group col-md-12" id="accordion">
+	<div class="events panel-heading panel" data-toggle="collapse" data-parent="#accordion" href="#wrksp-collapse1">
+		<ul>
+			<li class="col-md-4">First Workshop of the Study Group</li>
+			<li class="col-md-2">January 26-28 2009</li>
+			<li class="col-md-2"><a href="#">DESY</a></li>
+			<li class="col-md-2">Hamburg, Germany</li>
+			<li class="col-md-2"><a class="btn" role="button">GO TO EVENT PAGE</a></li>
+		</ul>
+	</div>
+	<div id="wrksp-collapse1" class="panel-collapse collapse in">
+		<div class="panel-body">
+			<div class="col-md-8 no-padding">
+				<div class="desc col-md-12 no-padding">
+					Experiments close to the end of the data taking initiate with this workshop a common reflection on data persistency and long term analysis in order to get a common vision on these issues and create a multi-experiment dynamics for further reference. It is foreseen that the workshop is a starting point for intense consultations and common work on defined subject. A second follow-up workshop will take place mid 2009.  The objectives of the workshop are:  *Review and document the physics objectives of the data persistency in HEP.*Exchange information concerning the analysis model: abstraction, software, documentation etc. and identify coherence points.  *Address the harware and software persistency status  *Review possible fundings programs and other related international initiatives. *Converge to a common set of specifications in a document that will constitute the basis for future collaborations. 
+				</div>
+			</div>
+			<div class="col-md-4" style="height:180px;">
+				<div class="dateloc col-md-12 no-padding">
+					<div class="pull-left col-md-6 no-padding">
+						<span class="col-md-2 pull-left icon-clock2"></span>
+						<span class="col-md-10 pull-left">Starts 26 Jan 2009 08:00</span>
+						<span class="col-md-10 pull-left">Ends 28 Jan 2009 18:00</span>
+						<span class="col-md-10 pull-left col-md-offset-2">Europe/Zurich</span>
+					</div>
+					<div class="pull-right col-md-6 no-padding">
+						<span class="icon-map col-md-2"></span>
+						<span class="col-md-10"><a href="">CERN</a></span>
+						<span class="col-md-10"><a href="">IT AMPHITHEATER</a></span>
+					</div>
+				</div>
+				<div class="perslnk col-md-12 no-padding">
+					<div class="pull-left col-md-6 no-padding">
+						<span class="col-md-2 pull-left icon-user4"></span>
+						<span class="col-md-10 pull-left">Dr. Groep, David</span>
+					</div>
+					<div class="pull-right col-md-6 no-padding">
+						<span class="icon-link col-md-2"></span>
+						<span class="col-md-10"><a href="#">http://www.chep2013.org</a></span>
+					</div>
+				</div>
+				<div class="social col-md-12 no-padding">
+					<span class="icon-calendar col-md-offset-1 col-md-2"></span>
+					<span class="icon-mail col-md-2"></span>
+					<span class="icon-googleplus3 col-md-2"></span>
+					<span class="icon-facebook col-md-2"></span>
+					<span class="icon-twitter col-md-2"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="events panel-heading panel" data-toggle="collapse" data-parent="#accordion" href="#wrksp-collapse2">
+		<ul>
+			<li class="col-md-4">Second Workshop of the Study Group</li>
+			<li class="col-md-2">May 26-28 2009</li>
+			<li class="col-md-2"><a href="#">SLAC</a></li>
+			<li class="col-md-2">San Francisco, USA</li>
+			<li class="col-md-2"><a class="btn" role="button">GO TO EVENT PAGE</a></li>
+		</ul>
+	</div>
+	<div id="wrksp-collapse2" class="panel-collapse collapse">
+		<div class="panel-body">
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		</div>
+	</div>
+	<div class="events panel-heading panel" data-toggle="collapse" data-parent="#accordion" href="#wrksp-collapse3">
+		<ul>
+			<li class="col-md-4">Third Workshop of the Study Group</li>
+			<li class="col-md-2">December 7-9 2009</li>
+			<li class="col-md-2"><a href="#">CERN</a></li>
+			<li class="col-md-2">Geneva, Switzerland</li>
+			<li class="col-md-2"><a class="btn" role="button">GO TO EVENT PAGE</a></li>
+		</ul>
+	</div>
+	<div id="wrksp-collapse3" class="panel-collapse collapse">
+		<div class="panel-body">
+			<div class="col-md-8 no-padding">
+				<div class="desc col-md-12 no-padding">
+					Experiments close to the end of the data taking initiate with this workshop a common reflection on data persistency and long term analysis in order to get a common vision on these issues and create a multi-experiment dynamics for further reference. It is foreseen that the workshop is a starting point for intense consultations and common work on defined subject. A second follow-up workshop will take place mid 2009.  The objectives of the workshop are:  *Review and document the physics objectives of the data persistency in HEP.*Exchange information concerning the analysis model: abstraction, software, documentation etc. and identify coherence points.  *Address the harware and software persistency status  *Review possible fundings programs and other related international initiatives. *Converge to a common set of specifications in a document that will constitute the basis for future collaborations. 
+				</div>
+			</div>
+			<div class="col-md-4" style="height:180px;">
+				<div class="dateloc col-md-12 no-padding">
+					<div class="pull-left col-md-6 no-padding">
+						<span class="col-md-2 pull-left icon-clock2" style="font-size:20px;padding-top:5px;"></span>
+						<span class="col-md-10 pull-left">Starts 26 Jan 2009 08:00</span>
+						<span class="col-md-10 pull-left">Ends 28 Jan 2009 18:00</span>
+						<span class="col-md-10 pull-left col-md-offset-2">Europe/Zurich</span>
+					</div>
+					<div class="pull-right col-md-6 no-padding">
+						<span class="icon-map col-md-2" style="font-size:20px;padding-top:2px;"></span>
+						<span class="col-md-10"><a href="">CERN</a></span>
+						<span class="col-md-10"><a href="">IT AMPHITHEATER</a></span>
+					</div>
+				</div>
+				<div class="perslnk col-md-12 no-padding">
+					<div class="pull-left col-md-6 no-padding">
+						<span class="col-md-2 pull-left icon-user4" style="font-size:20px;"></span>
+						<span class="col-md-10 pull-left">Dr. Groep, David</span>
+					</div>
+					<div class="pull-right col-md-6 no-padding">
+						<span class="icon-link col-md-2" style="font-size:20px;"></span>
+						<span class="col-md-10"><a href="#">http://www.chep2013.org</a></span>
+					</div>
+				</div>
+				<div class="social col-md-12 no-padding">
+					<span class="icon-calendar col-md-offset-1 col-md-2"></span>
+					<span class="icon-mail col-md-2"></span>
+					<span class="icon-googleplus3 col-md-2"></span>
+					<span class="icon-facebook col-md-2"></span>
+					<span class="icon-twitter col-md-2"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="events panel-heading panel" data-toggle="collapse" data-parent="#accordion" href="#wrksp-collapse4">
+		<ul>
+			<li class="col-md-4">First Workshop of the Study Group</li>
+			<li class="col-md-2">January 26-28 2009</li>
+			<li class="col-md-2"><a href="#">DESY</a></li>
+			<li class="col-md-2">Hamburg, Germany</li>
+			<li class="col-md-2"><a class="btn" role="button">GO TO EVENT PAGE</a></li>
+		</ul>
+	</div>
+	<div id="wrksp-collapse4" class="panel-collapse collapse">
+		<div class="panel-body">
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		</div>
+	</div>
+	<div class="events panel-heading panel" data-toggle="collapse" data-parent="#accordion" href="#wrksp-collapse5">
+		<ul>
+			<li class="col-md-4">Second Workshop of the Study Group</li>
+			<li class="col-md-2">May 26-28 2009</li>
+			<li class="col-md-2"><a href="#">SLAC</a></li>
+			<li class="col-md-2">San Francisco, USA</li>
+			<li class="col-md-2"><a class="btn" role="button">GO TO EVENT PAGE</a></li>
+		</ul>
+	</div>
+	<div id="wrksp-collapse5" class="panel-collapse collapse">
+		<div class="panel-body">
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		</div>
+	</div>
+	<div class="events panel-heading panel" data-toggle="collapse" data-parent="#accordion" href="#wrksp-collapse6">
+		<ul>
+			<li class="col-md-4">Third Workshop of the Study Group</li>
+			<li class="col-md-2">December 7-9 2009</li>
+			<li class="col-md-2"><a href="#">CERN</a></li>
+			<li class="col-md-2">Geneva, Switzerland</li>
+			<li class="col-md-2"><a class="btn" role="button">GO TO EVENT PAGE</a></li>
+		</ul>
+	</div>
+	<div id="wrksp-collapse6" class="panel-collapse collapse">
+		<div class="panel-body">
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		</div>
+	</div>
+</div>
+</div>
+</section>
+
+{% endblock body %}
+{% endblock page_body %}
+<!-- HERE ends the BODY -->
+
+{% block javascript %}
+	{{ super() }}
+{% endblock javascript%}

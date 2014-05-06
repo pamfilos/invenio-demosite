@@ -18,7 +18,7 @@
 ## 59 Temple Place, Suite 330, Boston, MA 02D111-1307, USA.
 
 PACKAGES = [
-    "invenio_dphep.base",
+	"invenio_dphep.base",
     "invenio_dphep.modules.*",
     "invenio.modules.*",
 ]

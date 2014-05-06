@@ -1,0 +1,281 @@
+{% extends 'page.html' %}
+
+{% block page_body %}
+{% block body %}
+<style>
+
+input {
+	padding: 1px 10px;
+	font-size: 12px;
+	/*border-radius: 3px;*/
+	/*background-color: #ccc;*/
+	color: #ccc;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+}
+	
+.top_info {
+	background-color: #e6e6e6;
+	display: block;
+	margin-top: 20px;
+	padding: 10px;	
+}
+.top_info h2 {
+	margin-top: 5px;
+}
+.top_info span {
+	display: block;
+}
+.top_info button {
+	clear: both;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.collection {
+	margin-top: 30px;
+	display: block;
+}
+
+.collection_data .head {
+	margin-top: 20px;
+	background-color: #eee;	
+	height: 55px;
+	padding: 10px 0;
+
+}
+.collection_data .head span{
+	font-size: 10px;	
+	position: relative;
+	/*text*/-decoration: underline;
+	top: 0;
+}
+
+.collection_data .head ul li{
+	font-weight: bolder;
+	background-color: inherit;
+	height: auto;
+ 	text-align: center;
+	display: block;
+	/*text-decoration: underline;*/
+
+}
+
+.collection_data ul {
+	padding: 0 10px;
+	margin: 0;
+	display: block;
+}
+.collection_data ul > li {
+	list-style: none;
+	float: left;
+	display: table;
+}
+
+.collection_data ul>li>p {
+	display: table-cell;
+	vertical-align: middle;
+}
+.collection_data {
+	height: 100%;
+	float: left;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.collection_data ul li {
+	padding: 5px 0;
+}
+
+.cdata_panel {
+	border-bottom : 1px solid rgba(204, 204, 204, 0.19);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	padding: 0;
+}
+
+
+.collection_data > div > ul > li:nth-child(1){
+	width: 5%;
+}
+
+.collection_data > div > ul > li:nth-child(2){
+	width: 18%;
+}
+.collection_data > div > ul > li:nth-child(3){
+	width: 18%;
+}
+.collection_data > div > ul > li:nth-child(4){
+	width: 25%;
+}
+.collection_data > div > ul > li:nth-child(5){
+	width: 25%;
+}
+.collection_data > div > ul > li:nth-child(6){
+	width: 7%;
+}
+.collection_data > div > ul > li:nth-child(7){
+	width: 2%;
+}
+
+</style>
+<section class="content">
+	<div class="container">
+		<div class="top_info col-md-12">
+			<h2>OUR DATA</h2>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, rerum, nemo, reiciendis, a consequuntur provident ut modi minima ullam omnis ducimus maxime officiis doloribus quod ex accusantium perspiciatis illo consectetur.</span>
+			<a href="{{ url_for('submit')}} " class="btn">Contribute by submitting some data</a>
+		</div>
+		
+		<div class="collection col-md-12 no-padding">
+			<div class="pull-left">
+				<label for="searchfor">LOOKING FOR:</label><input name="searchfor" class="search" placeholder="filter your search" />
+			</div>
+			<div class="pull-right">
+				<button id="sortNames" class="sort btn" data-sort="contact" styl>Sort by Name</button>
+
+				<div class="btn-group">
+					<button id="sortPos" class="sort btn" data-sort="exppos">Sort by Position</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="#">CERN</a></li>
+						<li><a tabindex="-1" href="#">SLAC</a></li>
+						<li><a tabindex="-1" href="#">DESY</a></li> 
+					</ul>
+				</div>
+				<div class="btn-group">
+					<button id="sortInst" class="sort btn" data-sort="institute">Sort by Institute</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="#">CERN</a></li>
+						<li><a tabindex="-1" href="#">SLAC</a></li>
+						<li><a tabindex="-1" href="#">DESY</a></li> 
+					</ul>
+				</div>
+			</div>
+			<div class="collection_data col-md-12 no-padding">
+				<div class="head">
+					<ul>
+						<li class="col-md-1">Type  <span class="glyphicon glyphicon-sort"></span></li>
+						<li class="col-md-2">Experiment Title  <span class="glyphicon glyphicon-sort"></span></li>
+						<li class="col-md-2">Author <span class="glyphicon glyphicon-sort"></span></li>
+						<li class="col-md-3">Domain  <span class="glyphicon glyphicon-sort"></span></li>
+						<li class="col-md-3">Topic  <span class="glyphicon glyphicon-sort"></span></li>
+						<li class="col-md-1">Location <span class="glyphicon glyphicon-sort"></span></li>
+						<li ></li>
+					</ul>
+				</div>
+				<div class="cdata_panel col-md-12">
+					<ul>
+						<li class="col-md-1"><p><a href="">POL</a></p></li>
+						<li class="col-md-2"><p><a href="{{ url_for('data/policy/1') }}">Policy Title</a></p></li>
+						<li class="col-md-2"><p><a href="#">FName LName</a>, <a href="">Fname2 LName2</a></p></li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-bdomain">domain_1</span>
+				                <span class="tag-box tag-bdomain">domain_2</span>
+				                <span class="tag-box tag-bdomain">domain_3</span>
+				                <span class="tag-box tag-bdomain">domain_4</span>
+				                <span class="tag-box tag-bdomain">domain_5</span>
+			            	</p>
+						</li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-btopic">topic_1</span>
+	                			<span class="tag-box tag-btopic">topic_2</span>
+	                			<span class="tag-box tag-btopic">topic_3</span>
+	                		</p>
+						</li>
+						<li class="col-md-1"><p><a href="#">CERN</a></p></li>
+						<li ><button class="btn glyphicon glyphicon-new-window"></button></li>
+					</ul>
+				</div>
+				<div class="cdata_panel col-md-12">
+					<ul>
+						<li class="col-md-1"><p><a href="">POL</a></p></li>
+						<li class="col-md-2"><p><a href="">Policy Title</a></p></li>
+						<li class="col-md-2"><p><a href="#">FName3 LName3</a></p></li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-bdomain">domain_1</span>
+				                <span class="tag-box tag-bdomain">domain_2</span>
+				                <span class="tag-box tag-bdomain">domain_3</span>
+				                <span class="tag-box tag-bdomain">domain_4</span>
+			            	</p>
+						</li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-btopic">topic_1</span>
+	                		</p>
+						</li>
+						<li class="col-md-1"><p><a href="#">SLAC</a></p></li>
+						<li ><button class="btn glyphicon glyphicon-new-window"></button></li>
+					</ul>
+				</div>
+				<div class="cdata_panel col-md-12">
+					<ul>
+						<li class="col-md-1"><p><a href="">EXP</a></p></li>
+						<li class="col-md-2"><p><a href="">Experiment Title</a></p></li>
+						<li class="col-md-2"><p><a href="#">FName LName</a>, <a href="">Fname2 LName2</a></p></li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-bdomain">domain_1</span>
+				                <span class="tag-box tag-bdomain">domain_2</span>
+			            	</p>
+						</li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-btopic">topic_1</span>
+	                			<span class="tag-box tag-btopic">topic_2</span>
+	                			<span class="tag-box tag-btopic">topic_3</span>
+	                			<span class="tag-box tag-btopic">topic_4</span>
+	                			<span class="tag-box tag-btopic">topic_5</span>
+	                		</p>
+						</li>
+						<li class="col-md-1"><p><a href="#">CERN</a></p></li>
+						<li ><button class="btn glyphicon glyphicon-new-window"></button></li>
+					</ul>
+				</div>
+				<div class="cdata_panel col-md-12">
+					<ul>
+						<li class="col-md-1"><p><a href="">POL</a></p></li>
+						<li class="col-md-2"><p><a href="">Policy Title</a></p></li>
+						<li class="col-md-2"><p><a href="#">FName LName</a></p></li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-bdomain">domain_1</span>
+				                <span class="tag-box tag-bdomain">domain_2</span>
+			            	</p>
+						</li>
+						<li class="col-md-3">
+							<p>
+								<span class="tag-box tag-btopic">topic_1</span>
+	                			<span class="tag-box tag-btopic">topic_2</span>
+	                			<span class="tag-box tag-btopic">topic_3</span>
+	                			<span class="tag-box tag-btopic">topic_4</span>
+	                		</p>
+						</li>
+						<li class="col-md-1"><p><a href="#">SLAC</a></p></li>
+						<li ><button class="btn glyphicon glyphicon-new-window"></button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+</section>
+
+
+{% endblock body %}
+{% endblock page_body %}
+
+{% block javascript %}
+
+{% endblock javascript %}

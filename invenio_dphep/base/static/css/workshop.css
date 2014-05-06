@@ -1,0 +1,128 @@
+.content {
+	display: block;
+}
+
+.workshops {
+	background-color: #e6e6e6;
+	padding: 0;
+	padding-bottom: 20px;
+}
+
+.workshops .events {
+	height: 50px;
+	padding: 13px 0;
+}
+
+/*.panel-heading:nth-child(2n+1) {
+	background-color: blue;
+}*/
+
+.workshops .panel-body {
+	max-height: 210px;
+}
+.panel-group .panel-heading{
+	border-bottom: 1px solid rgba(204, 204, 204, 0.19);
+}
+
+.panel-body .desc {
+	text-align: justify; 
+}
+
+.panel-body .dateloc> span:nth-child(n+2){
+	padding: 1px;
+}
+
+.panel-body .dateloc span:nth-child(n-1){
+	padding: 0 1px;
+}
+
+.panel-body .dateloc {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	height: 65px;
+}
+
+.panel-body .perslnk {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	height: 85px;
+}
+.panel-body .perslnk> span:nth-child(n+2){
+	padding: 1px;
+}
+
+.panel-body .perslnk span:nth-child(n-1){
+	padding: 0 1px;
+}
+.panel-body .social {
+	position: relative;
+	bottom: 0;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+	float: right;
+}
+.panel-body .social span{
+	font-size: 20px;
+}
+
+.panel-body span {
+	font-size: 12px;
+}
+
+.workshop-utils {
+	background-color: #eee;
+}
+
+.workshop-utils .events{
+	height: 55px;
+	padding: 13px 0;
+}
+
+.workshop-utils .head span{
+	font-size: 10px;	
+	position: relative;
+	/*text*/-decoration: underline;
+	top: 0;
+}
+
+.workshop-utils .head ul li{
+	font-weight: bolder;
+	background-color: inherit;
+	height: auto;
+	text-align: left;
+	/*text-decoration: underline;*/
+
+}
+
+.events ul {
+	padding: 0;
+	margin: 0;
+}
+.events ul > li {
+	list-style: none;
+	float: left;
+	height: 50px;
+}
+
+.workshops .events .btn {
+	padding: 2px 4px;
+	background-color: #ccc;
+}
+
+.workshops > .panel{
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+.workshops .panel-body > div:nth-child(2) > div >div >span:first-child {
+	width: 25px;
+	height: 25px;
+	text-align: left;
+	font-size: 20px;
+}
+
+.workshops .panel-body > div:nth-child(2) span {
+	text-align: left;
+	display: block;
+}
+
