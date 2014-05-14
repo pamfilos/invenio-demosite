@@ -8,54 +8,76 @@
             <span class="sp2 pull-left">Forever</span>
           </div>
         </a>
+        
       </div>
-      <div class="navbar-collapse collapse navbar-right">
-          <ul class="nav navbar navbar-right">
-            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-            <li><a href="{{ url_for('workshops') }}">WORKSHOPS</a></li>
-            <li><a href="{{ url_for('people') }}">PEOPLE</a></li>
-            <li style="border-right:1px solid #ccc;" ><a href="{{ url_for('press') }}">PRESS</a></li>
-            {% if current_user.is_guest %}
+      <div class="pull-right mob-toggle">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="[id*='collapse-toggle-nav']">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      </div>  
 
-            <li><a href="#">SIGN UP</a></li>
-            <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">SIGN IN<b class="caret"></b></a>
-                <div class="signin dropdown-menu">
-                  <form action="{{ url_for('webaccount.login') }}" method="POST" class="form-horizontal" role="form">
-                    <div class="form-group">
-                      <input type="hidden" id="referer" name="referer">
-                      <input type="hidden" id="login_method" name="login_method" value="Local">
-                      <div class="col-md-12 col-sm-12"><input id="nickname" name="nickname" type="text" class="form-control" placeholder="Email"></div>
-                      <div class="col-md-12 col-sm-12"><input id="password" name="password" type="password" class="form-control" placeholder="Password"></div>
-                      <div class="col-md-12 col-sm-12"><label><input id="remember" name="remember" type="checkbox" class="checkbox form-control">Remember me</label></div>
-                      <div class="col-md-12 col-sm-12"><button class="btn btn-default" type="submit" id="submit" name="submit">Sign in</button></div>
+      <div class="pull-right mob">
+        <div class="mob-down">
+          <div class="navbar-collapse sm-nav collapse pull-left down" id="collapse-toggle-nav1">
+              <ul class="nav navbar navbar-right">
+                <li class="scndry-nav"><a href="{{ url_for('about') }}">ABOUT</a></li>
+                <li class="scndry-nav"><a href="{{ url_for('workshops') }}">WORKSHOPS</a></li>
+                <li class="scndry-nav"><a href="{{ url_for('people') }}">PEOPLE</a></li>
+                <li class="scndry-nav"><a href="{{ url_for('press') }}">PRESS</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+          <div class="mob-up">
+            <div class="navbar-collapse collapse pull-left down" id="collapse-toggle-nav2">
+              <ul class="nav navbar navbar-right">
+                {% if current_user.is_guest %}
+                    
+                <li class="sm-hide md-show"><a href="#">SIGN UP</a></li>
+                <li class="dropdown">
+                    <a href="{{ url_for('webaccount.login') }}" class="dropdown-toggle" data-toggle="dropdown">SIGN IN<b class="caret"></b></a>
+                    <div class="signin dropdown-menu">
+                      <form action="{{ url_for('webaccount.login') }}" method="POST" class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <input type="hidden" id="referer" name="referer">
+                          <input type="hidden" id="login_method" name="login_method" value="Local">
+                          <div class="col-md-12 col-sm-12"><input id="nickname" name="nickname" type="text" class="form-control" placeholder="Email"></div>
+                          <div class="col-md-12 col-sm-12"><input id="password" name="password" type="password" class="form-control" placeholder="Password"></div>
+                          <div class="col-md-12 col-sm-12"><label><input id="remember" name="remember" type="checkbox" class="checkbox form-control">Remember me</label></div>
+                          <div class="col-md-12 col-sm-12"><button class="btn btn-default" type="submit" id="submit" name="submit">Sign in</button></div>
+                        </div>
+                      </form>
                     </div>
+                  </li>
+                  {% else %}
+                  <li>
+                     <a href="{{ url_for('webaccount.logout') }}"><span class="glyphicon glyphicon-off"></span>
+                      Log out
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('webaccount.index') }}"><span class="glyphicon glyphicon-user"></span>
+                      {{ current_user.nickname|default(current_user.email) }}
+                    </a>
+                  {% endif %}
+                </li>
+                <li class="sm-hide md-show">
+                  <form action="post" class="search-bar input-group">
+                    <input type="text" placholder="Search.." class="search-input"/>
+                    <span class="input-group-btn">
+                      <button class="btn" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
                   </form>
-                </div>
-              </li>
-              {% else %}
-              <li>
-                 <a href="{{ url_for('webaccount.logout') }}"><span class="glyphicon glyphicon-off"></span>
-                  Log out
-                </a>
-              </li>
-              <li>
-                <a href="{{ url_for('webaccount.index') }}"><span class="glyphicon glyphicon-user"></span>
-                  {{ current_user.nickname|default(current_user.email) }}
-                </a>
-              {% endif %}
-            </li>
-            <li>
-              <form action="post" class="search-bar input-group">
-                <input type="text" placholder="Search.." class="search-input"/>
-                <span class="input-group-btn">
-                  <button class="btn" type="button">
-                    <span class="glyphicon glyphicon-search"></span>
-                  </button>
-                </span>
-              </form>
-            </li>
-          </ul>
+                </li>
+              </ul>
+                    </div>
+          </div>
       </div>
     </div>
   </nav>
+

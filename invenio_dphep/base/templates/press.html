@@ -144,13 +144,26 @@
 .pressbox [class*=_news] [class*=icon]:last-child span:first-child{
     padding-right: 10px;
 }
+
+    .contenttitle > div {
+        float: left;
+    }
+
+@media (min-width: 768px) {
+    .contenttitle > div {
+        float: right;
+    }
+
+}
+
+
 </style>
 
     <section class="content">
         <div class="container">
             <div class="contenttitle col-md-12">
                 <span>CURRENTLY SHOWING NEWS FROM <b>ALL</b></span>
-                <div class="btn-group pull-right">
+                <div class="btn-group">
                 <span style="float:left;font-size:14px;padding;1px;">SORTED BY</span>
                 <button id="sortPos" class="sort btn" data-sort="exppos">Date</button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown">
@@ -163,7 +176,7 @@
                 </ul>
                 </div>
             </div>
-            <div class="col-md-12 pressbox">
+            <div class="col-md-12 pressbox no-padding">
                 <div class="col-md-3">
                     <div class="mediabox">
                     <div class="photo"><img src="img/ups/image1.jpg" alt=""></div>

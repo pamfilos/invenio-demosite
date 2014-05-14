@@ -6,3 +6,50 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
 	{%- css 'css/style.css' -%}
 {%- endblock global_css -%}
+
+
+{%- block javascript %}
+
+
+<script type="text/javascript">
+
+(function($){
+	var link = $(".dropdown a").attr("href");
+	var upperNav = $("#collapse-toggle-nav1"), bottNav = $("#collapse-toggle-nav2");
+
+	if( window.innerWidth < 768){
+		$(document).off(".dropdown");
+		$(".panel").removeClass("panel-notmob");
+		// (".panel").stop();
+	}
+	else if (window.innerWidth < 992){
+		upperNav.removeAttr("id");
+		bottNav.removeAttr("id");
+		$(".panel").addClass("panel-notmob");
+		$(".panel").trigger("cssClassChanged");
+	}
+	else {
+
+	}
+
+	$(window).resize(function() {
+		if( window.innerWidth < 768){
+			$(".dropdown a").attr("href", link);
+			$(document).off(".dropdown");
+			upperNav.attr("id", "#collapse-toggle-nav1");
+			bottNav.attr("id", "#collapse-toggle-nav2");
+			$(".panel").removeClass("panel-notmob");
+		}
+		if( window.innerWidth > 768){
+			$(".dropdown a").attr("href", "#");
+			$(document).on(".dropdown");
+			upperNav.removeAttr("id");
+			bottNav.removeAttr("id");
+			$(".panel").addClass("panel-notmob");
+			$(".panel").trigger("cssClassChanged");
+		}        
+	});
+})(jQuery);
+</script>
+
+{%- endblock javascript %}

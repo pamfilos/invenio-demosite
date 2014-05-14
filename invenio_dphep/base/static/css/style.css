@@ -1,6 +1,263 @@
+/*------------- Mobile-first design ## For displays < 768px  -------------*/
+
+.mob-toggle {
+    margin: 10px;
+}
+.mob-toggle .navbar-toggle {
+    background-color: #ccc;
+    margin-right: 0;
+}
+
+.mob-toggle button .icon-bar {
+    background-color: #575757;
+    height: 4px;
+}
+
+.mob-menu {
+    width: 100%;
+}
+.logo {
+    margin: 5px;
+}
+.mob  {
+    float: right;
+    width: 100%;
+}
+
+.mob-up {
+    width: 100%;    
+}
+.mob-down {
+    width: 100%;
+}
+
+.mob-down ul {
+    margin: 0;
+}
+
+.mob-up .navbar-collapse {
+    padding: 0;
+}
+
+.mob-up .nav li:first-child{
+    width: 50%;
+    border-right: 1px solid #ccc;
+}
+
+.mob-up .nav li:nth-child(2) {
+    width: 50%;
+}
+
+.mob-up .nav li:last-child {
+    width: 100%;
+}
+
+.mob-up .dropdown > a {
+    /*pointer-events: auto;*/
+}
+.mob-up .nav li:last-child form{
+    width: 100%;
+    background-color: inherit;
+    margin: 0;
+}
+.mob-up .nav li:last-child form input{
+    width: 100%;
+}
+
+.mob-up .nav li:last-child form {
+    width: 100%;
+}
+.mob-down .down {
+    width: 100%;
+    padding: 0;
+
+}
+
+.mob .search-bar{
+    height: 36px;
+}
+
+.mob .caret {
+    display: none;
+}
+.mob .search-bar .btn{
+    padding: 10px 12px;
+}
+
+
+.mob .navbar-collapse {
+}
+
+header .navbarOutter .container {
+    padding: 0;
+}
+
+.mob-up .down {
+    width: 100%;
+    border-top: 0;
+
+}
+.mob-down .down .navbar li {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.mob-down .down ul >li:last-child{
+/*    border: 0;
+*/}
+
+.mob-up .down .navbar li {
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    header .navbarOutter {
+        /*border-top-color: red;*/
+    }
+
+    .mob-up {
+        margin-top: 18px;
+    }
+    .mob-up .dropdown > a {
+   /*     pointer-events: none;
+        cursor: default;*/
+    }
+    .sm-hide {
+        display: none !important;
+        border: 0 !important;
+    }
+    .sm-show{
+        display: block;
+    }
+
+    .mob-down .scndry-nav {
+        display: none;
+    }
+
+    .navbar-toggle{
+        display: block;
+    }
+    .mob-up .down, .mob {
+        width: auto;
+    }
+    .mob-down .sm-nav * {
+        width: auto;
+        display: none;
+    }
+
+    .mob-down .down .navbar li {
+    background-color: inherit;
+    text-align: center;
+    border-bottom: 0;
+    }
+
+    .mob-up * {
+        width: auto;
+    }    
+
+    .mob-down li.scndry-nav {
+        display: block;
+         float: left;background-color: inherit;
+    }
+
+    .mob-up .down .navbar li {
+        background-color: inherit;
+        width: 100%;
+        border: 0;
+    }    
+
+    .mob-up .down .navbar li.dropdown {
+        background-color: #c9c9c9;
+        border-radius: 4px;
+        padding: 2px;
+    }
+
+    .navbarOutter .navbar li a {
+        margin: 0;
+    }
+    
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .navbarOutter {
+        /*background-color: green;*/
+    }
+
+    .md-hide {
+        display: none !important;
+        border: 0 !important;
+    }
+    .md-show{
+        display: block !important;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .scndry-nav {
+         display: block;
+    }
+
+    .scndry-nav:last-child {
+        border-right: 1px solid #ccc;
+    }
+
+    .mob-down .sm-nav * {
+        width: auto;
+        display: block;
+    }
+
+    .mob-down .down .navbar li {
+        width: auto;
+    }
+
+    .mob-up .down .navbar li {
+        width: auto;
+    }
+
+    .navbarOutter .navbar li {
+        width: auto !important;
+    }
+
+    .mob-down, .mob-up {
+        width: auto;
+        margin-top: 0;
+        float: left !important;
+    }
+
+    .mob-up .down .navbar li.dropdown {
+        background-color: inherit;
+        /*border-radius: 4px;*/
+        padding: 0;
+    }
+
+    
+    .mob-up .nav li:last-child form {
+        width: 150px;
+        height: 30px;
+        background-color: #666;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .navbarOutter {
+        /*background-color: blue;*/
+    }
+}
+
 input:focus,select:focus,textarea:focus,button:focus {
     outline: none;
-}
+}   
 
 section{
     padding-top: 50px;
@@ -11,7 +268,7 @@ body {
     padding: 0;
     font-family: 'Open Sans';
     background: #fff;
-    color: #333;
+    color: #666;
 }
 
 body a {
@@ -35,10 +292,10 @@ header {
     background-color: #e8e8e8;
 }
 
-
 .content {
     display: block;
 }
+
 .btn {
     padding: 2px 4px;
 }
@@ -158,9 +415,10 @@ header {
 
 
 .community {
-    height: 210px;
+    /*height: 210px;*/
     /*background-color: #eee;*/
     padding: 0;
+    /*overflow: auto;*/
 }
 
 .contributors {
@@ -179,7 +437,9 @@ header {
 .contenttitle {
     color: #333;
     font-size: 16px;
-    margin: 0 0 20px 3px;
+    margin: 10px 0;
+    padding: 0 10px;
+    overflow: auto;
 }
 
 .contenttitle .btn {

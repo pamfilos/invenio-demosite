@@ -1,9 +1,9 @@
 {% extends "page.html" %}
 
 {%- css 'css/home.css' , '10-invenio' %}
-{%- css 'css/moz.css',  '10-invenio' %}
+{%- css 'css/accordion.css',  '10-invenio' %}
 {%- js 'js/home.js' %}
-{%- js 'js/moz.js' %}
+{%- js 'js/accordion.js' %}
 <!-- HERE starts the HEADER -->
 
 <!-- HERE ends the HEADER -->
@@ -14,10 +14,10 @@
 {% block body %}
 
 <section class="entry-points" style="background-color: #e8e8e8;">
-    <div class="container no-padding" style="width:960px;">
+    <div class="container no-padding">
 
         <div class="accordion col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-10">
-            <div id="researchers" class="panel">
+            <div id="researchers" class="panel panel-notmob">
                 <h2 class="panel-title" style="display:block;"><i>DO RESEARCH</i></h2>
                 <div class="panel-inner">
                     <div class="panel-content">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div id="submissions" class="panel">
+            <div id="submissions" class="panel panel-notmob">
                 <h2 class="panel-title" style="display:block;"><i>SUBMIT DATA</i></h2>
                 <div class="panel-inner">
                     <div class="panel-content">
@@ -41,20 +41,20 @@
                     </div>
                 </div>
             </div>
-            <div id="educational" class="panel">
+            <div id="educational" class="panel panel-notmob">
                 <h2 class="panel-title" style="display:block;"><i>LEARN MORE</i></h2>
                 <div class="panel-inner">
                     <div class="panel-content">
                         <a href="{{ url_for('learn') }}">
-                            <h3></h3>
+                            <h3>RESEARCH AND LEARN</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, recusandae, vitae, veritatis, placeat reiciendis suscipit ipsam ex assumenda minus nulla voluptas facere labore asperiores.</p>
                             <p class="go">Learn with us</p>
                         </a>
                     </div>
                 </div>
             </div>
-            <div id="fundings" class="panel">
-                <h2 class="panel-title" style="display:block;"><i>HELP AND CONTRIBUTE</i></h2>
+            <div id="fundings" class="panel panel-notmob">
+                <h2 class="panel-title" style="display:block;"><i>CONTRIBUTE</i></h2>
                 <div class="panel-inner">
                     <div class="panel-content">
                         <a href="{{ url_for('fund') }}">
@@ -72,7 +72,7 @@
 <section class="news-group">
     <div class="container">
     <div class="news" style="background-color:green;">
-            <div class="col-xs-6 col-md-4 no-padding">
+            <div class="col-xs-12 col-sm-5 col-md-4 no-padding">
                 <ul class="list-group latest">
                     <li class="list-group-item title">
                         <h5 style="float:left;font-size:20px;font-weight:bold;"><span class="glyphicon glyphicon-th-list"></span> Latest News</h5>
@@ -80,30 +80,57 @@
                     </li>
                     <li class="list-group-item"> 
                         <ul>
-                            <li>DIS 2013 and HEP-EPS 2013 Proceedings</li><li><a href="#">read more</a></li>
+                            <li>DIS 2013 and HEP-EPS 2013 Proceedings</li> <!-- <li><a href="#">read more</a></li> -->
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                     <li class="list-group-item">
                         <ul>
-                            <li>ICHEP 2012 Proceedings</li><li><a href="#">read more</a></li>
+                            <li>ICHEP 2012 Proceedings</li><!-- <li><a href="#">read more</a></li> -->
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                     <li class="list-group-item">
                         <ul>
-                            <li>Second DPHEP Publication, May 2012</li><li><a href="#">read more</a></li>
+                            <li>Second DPHEP Publication, May 2012</li><!-- <li><a href="#">read more</a></li> -->
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                     <li class="list-group-item">
                         <ul>
-                            <li>Moriond QCD 2009 Proccedings</li><li><a href="#">read more</a></li>
+                            <li>Moriond QCD 2009 Proccedings</li><!-- <li><a href="#">read more</a></li> -->
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-6 col-md-8 no-padding">
-                <ul class="list-group">
+            
+
+            <div class="col-xs-12 col-sm-7 col-md-8 no-padding">
+              <!--   <div class="transition-block">
+                    <span class="glyphicon glyphicon-minus" style="font-size:20px;"></span>
+                    <span class="glyphicon glyphicon-minus" style="font-size:20px;"></span>
+                    <span class="glyphicon glyphicon-minus" style="font-size:20px;"></span>
+                </div> -->
+                <ul class="list-group featured">
                     <li class="list-group-item title">
-                        <h5 style="font-size:20px;float:left;font-weight:400;"><span class="glyphicon glyphicon-calendar"></span> Featured Events</h5>
+                        <h5 style="font-size:20px;float:left;font-weight:bold;"><span class="glyphicon glyphicon-calendar"></span> Featured Events</h5>
                         <h6 style="font-size:11px;float:right;padding-top:6px;font-weight:bold;"><span ><a href="#">see all events</a></span></h6>
                     </li>
                     <li class="list-group-item event">
@@ -112,6 +139,11 @@
                             <li class="event-place">@ <a href="#">CERN</a></li>
                             <li class="event-date">January 13-14, 2014</li>
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                     <li class="list-group-item">
                         <ul>
@@ -119,6 +151,11 @@
                             <li class="event-place" >@ <a href="#">CHEP 2013, Amsterdam</a></li>
                             <li class="event-date">October 16, 2013</li>
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                     <li class="list-group-item">
                         <ul>
@@ -126,6 +163,11 @@
                             <li class="event-place">@ <a href="#">CERN</a></li>
                             <li class="event-date">March 21-22, 2014</li>
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                     <li class="list-group-item">
                         <ul>
@@ -133,6 +175,11 @@
                             <li class="event-place">@ <a href="#">CPPM, Marseille</a></li>
                             <li class="event-date">November 19-21, 2012</li>
                         </ul>
+                        <div class="formore">
+                            <div style="padding: 0 5px 10px 0;position:absolute;right:0;bottom:0;">
+                                <span class="glyphicon glyphicon-chevron-right" ></span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -142,8 +189,8 @@
 
 <section class="searching"  style="background-color: #e8e8e8;">
     <div class="container">
-        <div class="quick-search col-md-offset-1 col-md-10">
-            <div class="qs-box col-md-3">
+        <div class="quick-search col-md-10">
+            <div class="qs-box col-xs-12 col-sm-4 col-sm-offset-1 col-md-offset-0 col-md-3">
                 <div class="qs-header">Featured Topics</div>
                 <div class="qs-content">
                     <ul>
@@ -161,7 +208,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="qs-box col-md-3">
+            <div class="qs-box col-xs-12 col-sm-4 col-sm-offset-2 col-md-3  col-md-offset-0">
                 <div class="qs-header">Latest Experiments</div>
                 <div class="qs-content">
                     <ul>
@@ -175,13 +222,34 @@
                     </ul>
                 </div>
             </div>
-            <div class="qs-box col-md-3">
+            <div class="qs-box col-xs-12 col-sm-4 col-sm-offset-1 col-md-3  col-md-offset-0">
                 <div class="qs-header">Latest Policies</div>           
-                <div class="qs-content"></div>
+                <div class="qs-content">
+                    <ul>
+                        <li><span><a href="#">Nuclear Physics</a></span></li>
+                        <li><span><a href="#">Standard Model</a></span></li>
+                        <li><span><a href="#">Quark</a></span></li>
+                        <li><span><a href="#">Particle accelerator</a></span></li>
+                        <li><span><a href="#">Proton</a></span></li>
+                        <li><span><a href="#">Photon</a></span></li>
+                        <li><span><a href="#">Superconductors</a></span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="qs-box col-md-3">
+            <div class="qs-box col-xs-12 col-sm-4 col-sm-offset-2 col-md-3  col-md-offset-0">
                 <div class="qs-header">Institutes</div>
-                <div class="qs-content"></div>
+                <div class="qs-content">
+                    <ul>
+                        <li><span><a href="#">CERN</a></span></li>
+                        <li><span><a href="#">SLAC</a></span></li>
+                        <li><span><a href="#">FermiLab</a></span></li>
+                        <li><span><a href="#">DESY</a></span></li>
+                        <li><span><a href="#">CERN</a></span></li>
+                        <li><span><a href="#">SLAC</a></span></li>
+                        <li><span><a href="#">FermiLab</a></span></li>
+                        <li><span><a href="#">DESY</a></span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -208,4 +276,22 @@
 
 {% block javascript %}
 	{{ super() }}
+
+<script type="text/javascript">
+
+(function($){
+    if( window.innerWidth < 768){
+        width = $(".panel").css("width");
+        $(".panel").css("height", width);
+    }
+    $(window).resize(function(){
+        if (window.innerWidth < 768 ) {
+            width = $(".panel").css("width");
+            $(".panel").css("height", width);
+        }    
+    });
+})(jQuery);
+
+</script>
+
 {% endblock javascript%}

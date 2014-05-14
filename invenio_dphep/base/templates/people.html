@@ -10,14 +10,16 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	float: left;
+	float: none;
 }
 
 #ppl-tbl > ul li{ 
-	float: left;
-	padding: 10px;
-	
+	float: left;	
+    padding: 0;
 	margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    /*max-width: 350px;*/
 }
 
 #ppl-tbl .pplbox {
@@ -38,13 +40,20 @@
 #ppl-tbl .list img {
 	width: 80px;
 	height: 80px;
+    float: left;
 }
+
+#ppl-tbl .pplbox > div:last-child {
+    float: left;
+}
+
 
 #ppl-tbl label {
 	vertical-align: bottom;
 	padding-right: 5px;
 	color: #666;
 	font-weight: normal;
+    margin-bottom: -2px;
 }
 
 #ppl-tbl input {
@@ -54,7 +63,7 @@
 	-background-color: #ccc;
 	color: #ccc;
 	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 0;
 	border: 0;
 	border-bottom: 1px solid #ccc;
 }
@@ -64,7 +73,8 @@
 	margin-left: 5px;
 }
 
-#ppl-tbl .btn-group {
+#ppl-tbl button.sort:first-child{
+    margin-left: 0;
 }
 
 .pad2mar{
@@ -72,19 +82,86 @@
 	margin: 0 15px;
 }
 
+.ppl-tbl-head {
+    overflow: auto;
+    margin: 5px 0;
+    padding: 0 10px;
+}
+
+#ppl-tbl .ppl-tbl-head > div:last-child {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+#ppl-tbl button.btn.sort > span {
+    display: none;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #ppl-tbl > ul li{ 
+        float: left;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    #ppl-tbl ul {
+        float: left;
+    }
+
+    .list > li {
+        width: 50%;
+    }
+
+    #ppl-tbl .ppl-tbl-head > div:last-child {
+        float: right;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: auto;
+    }
+
+    #ppl-tbl button.btn.sort > span {
+        display: block;
+        float: left;
+    }    
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .navbarOutter {
+        /*background-color: green;*/
+    }
+
+    .list > li {
+        width: 33.33333%;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .navbarOutter {
+        /*background-color: blue;*/
+    }
+}
+
 </style>
 
 
     <section class="content">
-    <div class="container">
         <div id="ppl-tbl" class="container">
-            <div class="col-md-12" style="padding:10px;">
-            <label for="searchfor">LOOKING FOR:</label><input name="searchfor" class="search" placeholder="filter your search" />
-            <div class="pull-right">
-                <button id="sortNames" class="sort btn" data-sort="contact" styl>Sort by Name</button>
+            <div class="ppl-tbl-head col-md-12">
+            <div class="pull-left">
+                <label for="searchfor">LOOKING FOR:</label><input name="searchfor" class="search" placeholder="filter your search" />
+            </div>
+            <div >
+                <span class="hidden-sm hidden-md hidden-lg">SORT BY: </span>
+                <button id="sortNames" class="sort btn" data-sort="contact" styl><span>Sort by </span> Name</button>
                 
                 <div class="btn-group">
-                    <button id="sortPos" class="sort btn" data-sort="exppos">Sort by Position</button>
+                    <button id="sortPos" class="sort btn" data-sort="exppos"><span>Sort by </span> Position</button>
                     <button class="btn dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
                     </button>
@@ -95,7 +172,7 @@
                     </ul>
                 </div>
                 <div class="btn-group">
-                    <button id="sortInst" class="sort btn" data-sort="institute">Sort by Institute</button>
+                    <button id="sortInst" class="sort btn" data-sort="institute"><span>Sort by </span> Institute</button>
                     <button class="btn dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
                     </button>
@@ -109,10 +186,10 @@
             </div>
             
             <ul class="list col-md-12">
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                        <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                        <div class="col-md-9">
+                        <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                        <div class="col-md-9 col-xs-9">
                             <p class="exppos">ALICE</p>
                             <p class="contact">Paolo Giubelpno</p>
                             <p class="mail">paolo.giubelpno@cern.ch</p>
@@ -120,10 +197,10 @@
                         </div>
                     </div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                        <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                        <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">ALICE</p>
                     <p class="contact">Yves Schutz</p>
                     <p class="mail">yves.roland.schutz@cern.ch</p>
@@ -131,164 +208,164 @@
                     </div>
                     
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                        <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                        <div class="col-md-9">
+                        <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                        <div class="col-md-9 col-xs-9">
                         <p class="exppos">CERN, ROOT</p>
                         <p class="contact">Rene Brun</p>
                         <p class="mail">rene.brun@cern.ch</p>
                         <p class="institute">CERN, Geneva, Switzerland</p></div>
                     </div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN / Gjovik</p>
                     <p class="contact">Peter Igo-Kemenes</p>
                     <p class="mail">peter.igo-kemenes@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, Parse.Insight</p>
                     <p class="contact">Sunje Dallmeier-Tiessen</p>
                     <p class="mail">sunje.dallmeier-tiessen@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, Parse.Insight</p>
                     <p class="contact">Salvatore Mele</p>
                     <p class="mail">salvatore.mele@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, IT Group</p>
                     <p class="contact">Jamie Shiers</p>
                     <p class="mail">Jamie.Shiers@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, IT Group</p>
                     <p class="contact">Olof Barring</p>
                     <p class="mail">olof.barring@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, IT Group</p>
                     <p class="contact">Matthias Schroeder</p>
                     <p class="mail">matthias.schroder@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, IT Group</p>
                     <p class="contact">Tim Smith</p>
                     <p class="mail">Tim.Smith@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, IT Group</p>
                     <p class="contact">Juergen Knobloch</p>
                     <p class="mail">juergen.knobloch@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">CERN, IT Group</p>
                     <p class="contact">Frederic Hemmer</p>
                     <p class="mail">frederic.hemmer@cern.ch</p>
                     <p class="institute">CERN, Geneva, Switzerland</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">BaBar, Outreach</p>
                     <p class="contact">Matt Bellis</p>
                     <p class="mail">bellis@slac.stanford.edu</p>
                     <p class="institute">Stanford Linear Accelerator Laboratory, SLAC</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">BaBar, Computing Coordinator Emeritus   </p>
                     <p class="contact">Homer Neal</p>
                     <p class="mail">homer@slac.stanford.edu</p>
                     <p class="institute">Stanford Linear Accelerator Laboratory, SLAC</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">BaBar, Computing Coordinator Emeritus / LSST DM System Architect</p>
                     <p class="contact">Gregory Dubois-Felsmann</p>
                     <p class="mail">gpdf@slac.stanford.edu</p>
                     <p class="institute">Stanford Linear Accelerator Laboratory, SLAC</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">BaBar, Spokesperson Emeritus</p>
                     <p class="contact">Francois Le Diberder</p>
                     <p class="mail">diberder@lal.in2p3.fr</p>
                     <p class="institute">Laboratoire de l'Accelerateur Lineaire, LAL, Orsay, IN2P3/CNRS</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">BaBar, Computing Coordinator</p>
                     <p class="contact">Tina Cartaro</p>
                     <p class="mail">cartaro@slac.stanford.edu</p>
                     <p class="institute">Stanford Linear Accelerator Laboratory, SLAC</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">BaBar, Spokesperson</p>
                     <p class="contact">Michael Roney</p>
                     <p class="mail">mroney@uvic.ca</p>
                     <p class="institute">University of Victoria, Canada</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">SLAC / SPIRES</p>
                     <p class="contact">Travis Brooks</p>
                     <p class="mail">travis@slac.stanford.edu</p>
                     <p class="institute">Stanford Linear Accelerator Laboratory, SLAC</p></div></div>
                 </li>
-                <li class="col-md-4">
+                <li class="col-xs-12 col-md-4">
                     <div class="pplbox">
-                    <img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 no-padding">
-                    <div class="col-md-9">
+                    <div class="col-md-3 col-xs-3 no-padding"><img src="img/avatar.png" alt="" height="80px" width="80px" class="img-circle col-md-12 col-xs-3 no-padding"></div>
+                    <div class="col-md-9 col-xs-9">
                     <p class="exppos">SLAC, Computing Centre</p>
                     <p class="contact">Richard Mount</p>
                     <p class="mail">richard.mount@slac.stanford.edu</p>
@@ -296,10 +373,7 @@
                     </div></div>
                 </li>
             </ul>
-        </div>    
-        
-    </div>
-    
+        </div>        
     </section>
 
 {% endblock body %}
