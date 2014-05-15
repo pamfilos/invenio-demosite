@@ -1,0 +1,305 @@
+.no-js .panel-title {
+    display: none;
+}
+#wrapper, #main-content, .billboard {
+    width: 100%;
+    padding: 0;
+}
+.container {
+    /*width: 960px;*/
+    zoom: 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+.container:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    content: "."}
+
+/*.pillars {
+    background: url(/media/img/home/box-shadow-960.png) center bottom no-repeat;
+    padding: 0 0 40px;
+    position: relative;
+    margin: 0 auto 20px;
+}
+.wide .pillars {
+    height: 380px;
+}*/
+.accordion {
+    list-style: none;
+    position: relative;
+    left: -0.5%;
+    top: 0;
+    width: 102%;
+    margin: 0;
+}
+.js .accordion {
+    overflow: hidden;
+}
+.panel {
+    background-color: #777;
+    display: block;
+    margin: 0;
+    position: relative;
+    border-radius: 0;
+    border: 0;
+    -webkit-transition: background-position .5s ease-in-out;
+    -moz-transition: background-position .5s ease-in-out;
+    -o-transition: background-position .5s ease-in-out;
+    -ms-transition: background-position .5s ease-in-out;
+    transition: background-position .5s ease-in-out;
+}
+.panel:focus {
+    outline: 0;
+}
+.panel.expanded, .panel.compressed {
+    -webkit-transition: background-position .5s ease-in-out;
+    -moz-transition: background-position .5s ease-in-out;
+    -o-transition: background-position .5s ease-in-out;
+    -ms-transition: background-position .5s ease-in-out;
+    transition: background-position .5s ease-in-out;
+}
+.wide .panel {
+    margin: 0 0 0 -2px;
+    padding: 0;
+    float: left;
+    width: 25%;
+    height: 330px;
+    min-height: 0;
+    overflow: hidden;
+    box-shadow: -6px 0 10px -4px rgba(0, 0, 0, 0.5);
+}
+.wide .panel:first-child {
+    box-shadow: none;
+}
+.no-js .panel {
+    min-height: 16em;
+}
+.panel-title {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: bold;
+    letter-spacing: -0.025em;
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    margin: 0;
+    padding: 40px 15px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 218px;
+    height: 80px;
+}
+.panel-title i {
+    font-style: normal;
+}
+.panel-title:after {
+    content: ' »';
+    white-space: nowrap;
+}
+.panel-inner {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: background-color .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out;
+    -ms-transition: background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
+}
+.expanded .panel-inner {
+    background-color: transparent;
+    -webkit-transition: background-color .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out;
+    -ms-transition: background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
+}
+.compressed .panel-inner {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.panel-content {
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: normal;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.3;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+.panel-content h3 {
+    font-weight: bold;
+    font-size: 100%;
+    color: inherit;
+    letter-spacing: -0.03em;
+    margin: 0 0 .25em;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+.panel-content .go {
+    font-size: 90%;
+    font-weight: bold;
+    letter-spacing: -0.025em;
+}
+.panel-content .go:after {
+    content: ' »';
+    white-space: nowrap;
+}
+.panel-content>a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px 20px 20px 300px;
+}
+.panel-content a:link, .panel-content a:visited {
+    color: inherit;
+}
+.panel-content a:hover, .panel-content a:focus, .panel-content a:active {
+    color: inherit;
+    text-decoration: none;
+    outline: 0;
+}
+.panel-content a:focus .go, .panel-content a:active .go, .panel-content .go:hover {
+    text-decoration: underline;
+}
+.wide .panel-content {
+    height: 330px;
+    min-height: 0;
+    width: 480px;
+    padding: 40px 40px 40px 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wide .panel-content>a {
+    padding: 40px 40px 40px 300px;
+}
+.js .panel-content {
+    display: none;
+}
+.no-js .panel-content {
+    min-height: 9.5em;
+    padding: 1em 40px 1em 300px;
+}
+
+
+
+
+
+
+@media only screen and (min-width:760px) and (max-width:1000px) {
+   /* #masthead, .container, .newsletter-form, .mission, .pillars {
+    width: 720px;
+}*/
+
+/*.pillars {
+    background-image: url(/media/img/home/box-shadow-760.png);
+    padding-bottom: 32px;
+}*/
+.panel-title {
+    font-size: 16px;
+    width: 155px;
+}
+.wide .panel-content {
+    font-size: 16px;
+    height: 280px;
+    width: 250px;
+    padding: 80px 20px 20px 200px;
+}
+.wide .panel-content .panel-logo {
+    left: 200px;
+    top: 30px;
+}
+.wide .panel-content .go {
+    font-size: 16px;
+}
+.wide .panel-content>a {
+    padding: 80px 20px 20px 200px;
+}
+
+/*.pillars {
+    padding-bottom: 13px;
+    background-image: url(/media/img/home/box-shadow-320.png);
+}*/
+.accordion {
+    width: auto;
+    padding: 0;
+    position: relative;
+    left: 0;
+    overflow: visible;
+    margin: 0;
+}
+.panel {
+    float: none;
+    width: 100%;
+    height: 5.5em;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 4px 10px -5px rgba(0, 0, 0, 0.75);
+}
+.panel:first-child {
+    box-shadow: none;
+}
+.panel-inner {
+    background: transparent;
+}
+.panel-title {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: .75em 35px .75em 40%;
+    min-height: 3em;
+    text-align: left;
+    font-size: 16px;
+}
+.panel-title:after {
+    content: '\25bc';
+    position: absolute;
+    right: 18px;
+    top: 35%}
+.panel-content {
+    font-size: 16px;
+    line-height: 1.2;
+    width: 100%;
+    height: 100%}
+.panel-content>a {
+    padding: 20px 20px 20px 40%}
+.panel-content .panel-logo {
+    position: static;
+    display: block;
+    margin-bottom: 10px;
+}
+.no-js .panel {
+    height: auto;
+    min-height: 20em;
+    padding: 0;
+}
+.no-js .panel .panel-content {
+    padding: 0;
+}
+.extra-news, .extra-contribute {
+    width: auto;
+    float: none;
+    margin: 0 10px 20px;
+}
+.extra .newsletter-form {
+    width: auto;
+    float: none;
+    margin: 0 10px 20px;
+}
+
+
+
+}
+

@@ -21,8 +21,13 @@ PACKAGES = [
 	"invenio_dphep.base",
     "invenio_dphep.modules.*",
     "invenio.modules.*",
+    "invenio.base"
 ]
 
 DEPOSIT_TYPES = [
     'invenio_dphep.modules.deposit.workflows.article.article',
 ]
+
+CFG_SITE_URL = 'http://dphep-demo.cern.ch'
+#CFG_SITE_SECURE_URL = 'https://dphep-demo.cern.ch'
+CFG_SITE_SECURE_URL = 'http://dphep-demo.cern.ch'
