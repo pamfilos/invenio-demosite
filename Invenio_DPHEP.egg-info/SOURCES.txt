@@ -18,6 +18,7 @@ invenio_dphep/__init__.py
 invenio_dphep/config.py
 invenio_dphep/views.py
 invenio_dphep/base/__init__.py
+invenio_dphep/base/config.py
 invenio_dphep/base/receivers.py
 invenio_dphep/base/views.py
 invenio_dphep/base/bulletinext/__init__.py
@@ -52,6 +53,8 @@ invenio_dphep/base/recordext/functions/sync_corparate_names.py
 invenio_dphep/base/recordext/functions/sync_meeting_names.py
 invenio_dphep/base/recordext/functions/util_merge_authors.py
 invenio_dphep/modules/__init__.py
+invenio_dphep/modules/data/__init__.py
+invenio_dphep/modules/data/views.py
 invenio_dphep/modules/deposit/__init__.py
 invenio_dphep/modules/deposit/views.py
 invenio_dphep/modules/deposit/workflows/__init__.py

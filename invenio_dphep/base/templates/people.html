@@ -1,6 +1,7 @@
 {% extends "page.html" %}
 
 {% js 'js/list.min.js' %}
+{%- css 'css/icomoon.css'  -%}
 
 {% block page_body %}
 
@@ -85,7 +86,9 @@
 .ppl-tbl-head {
     overflow: auto;
     margin: 5px 0;
-    padding: 0 10px;
+    padding:  0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
 
 #ppl-tbl .ppl-tbl-head > div:last-child {
@@ -113,7 +116,7 @@
     }
 
     .list > li {
-        width: 50%;
+        /*width: 50%;*/
     }
 
     #ppl-tbl .ppl-tbl-head > div:last-child {
@@ -126,6 +129,7 @@
     #ppl-tbl button.btn.sort > span {
         display: block;
         float: left;
+        padding-right: 5px;
     }    
 }
 
@@ -136,7 +140,7 @@
     }
 
     .list > li {
-        width: 33.33333%;
+        /*width: 33.33333%;*/
     }
 }
 
@@ -182,6 +186,13 @@
                         <li><a tabindex="-1" href="#">DESY</a></li> 
                     </ul>
                 </div>
+                <div style="border-right: 1px solid #ccc;height: 10px;margin-left: 5px;display: inline-block;"></div>
+
+                <div class="btn-group">
+                    <button type="button" style="font-size:18px;padding:3px 5px;margin-left:5px;" onclick="removeThumbs();" class="btn icon-file"></button>
+                <button type="button" style="padding:3px 5px;font-size:18px;" onclick="showThumbs();" class="btn icon-profile"></button>
+                </div>
+                
             </div>
             </div>
             
@@ -388,9 +399,36 @@
 
         var pplList = new List('ppl-tbl', options);
 
-        $("#sortInst").click(function(){
+        pplList.on(searchComplete, function(){
+            if ( pplList.listContainer.length == 0 ){
+                pplList.appendChild("nothing found");
 
+            }
+        })
+
+        $("#sortInst").click(function(){   
         })
     });
+
+
+    var removeThumbs = function() {
+        $(".pplbox>.col-md-3").hide();
+        $(".list>li").removeClass("col-md-4").addClass("col-md-3");
+        $(".pplbox>.col-md-9").css("padding", "0");
+    };
+
+    var showThumbs = function(){
+        $(".pplbox>.col-md-3").show();
+        $(".list>li").addClass("col-md-4").removeClass("col-md-3");  
+        $(".pplbox>.col-md-9").css("padding", "0 15px");
+
+    };
+
+    var sortbyInstitute = function() {
+
+    }
+
+
+    
 </script> 
 {% endblock javascript %}

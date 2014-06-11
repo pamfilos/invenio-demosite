@@ -197,15 +197,8 @@
 
 
 
-@media only screen and (min-width:760px) and (max-width:1000px) {
-   /* #masthead, .container, .newsletter-form, .mission, .pillars {
-    width: 720px;
-}*/
+/*@media only screen and (min-width:760px) and (max-width:1000px) {
 
-/*.pillars {
-    background-image: url(/media/img/home/box-shadow-760.png);
-    padding-bottom: 32px;
-}*/
 .panel-title {
     font-size: 16px;
     width: 155px;
@@ -227,10 +220,6 @@
     padding: 80px 20px 20px 200px;
 }
 
-/*.pillars {
-    padding-bottom: 13px;
-    background-image: url(/media/img/home/box-shadow-320.png);
-}*/
 .accordion {
     width: auto;
     padding: 0;
@@ -303,3 +292,4 @@
 
 }
 
+*/

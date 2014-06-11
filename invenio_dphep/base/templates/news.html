@@ -1,0 +1,277 @@
+{% extends 'page.html' %}
+
+{%- js 'js/list.min.js' %}
+{%- js 'js/intro.js' , '20-invenio'  %}
+
+{%- css 'css/introjs.css' , '40-invenio' %}
+
+
+{% block page_body %}
+{% block body %}
+
+<style>
+	body {
+		background-color: #e8e8e8;
+	}
+
+	.news-box {
+		background-color: #fff;
+		min-height: 100px;
+	    -moz-box-shadow:    0 0 2px 0 #ccc;
+	    -webkit-box-shadow: 0 0 2px 0 #ccc;
+	    box-shadow: 0 0 2px 0 #ccc;
+	    margin-bottom: 20px;
+	    padding: 10px;
+	}
+
+	.news-filter {
+		/*background-color: #fff;
+		min-height: 150px;
+	    -moz-box-shadow:    0 0 2px 0 #ccc;
+	    -webkit-box-shadow: 0 0 2px 0 #ccc;
+	    box-shadow: 0 0 2px 0 #ccc;
+	    margin-bottom: 20px;*/
+	}
+
+	.top_info {
+		margin-bottom: 20px;
+	}
+
+	.top_info h1 {
+		font-weight: 300;
+	}
+	
+	.tag-box {
+		padding: 0;
+		margin-right: 5px;
+	}
+
+	.tag-box span {
+		background-color: #ccc;
+		color: #fff;
+		padding: 1px 3px;
+		border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    -moz-border-radius: 2px;	
+	    font-size: 11px;
+	}
+
+	.news-box .title {
+		font-weight: 600;
+		font-size: 15px;
+		color: #666;	
+	}
+
+	.news-box .title span {
+		background-color: #5cb85c;
+		padding: 2px 5px;
+		font-size: 11px;
+		color: #fff;
+		margin-left: 7px;
+	    border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    -moz-border-radius: 2px;		
+	}
+
+	.news-box .details {
+		font-size: 11px;
+		color: #999;
+	}
+
+	.news-box .details a, .news-box .details a:hover, .news-box .details a:focus{
+		font-weight: bold;
+		background-color: 
+	}
+
+	.news-box .more {
+
+	}
+
+	.news-box .body {
+		padding: 10px 0;
+		font-size: 13px;	
+	}
+
+	.news-box .category {
+		float: right;
+		position: relative;
+		top: 0;
+
+		font-size: 10px;
+	}
+
+	.news-box .category .tag-box {
+		background-color: #ccc;
+		color: #666;
+		padding: 2px;
+	}
+
+	.news-box .category .tag-box span {
+		color: #fff;
+		padding: 0;
+		font-size: 9px;
+	}
+
+	.centered {
+		margin: 0 auto;
+		float: none;
+	}
+</style>
+
+
+
+<!-- <div style="position:fixed;top=0;left=0;padding=9px;">
+	<a href="#" onclick="javascript:startTour();">Click Here for a TOUR!!</a>
+</div> -->
+
+<section class="content">
+	<div class="container">
+		<div class="top_info col-md-12 no-padding">
+			<h1>Latest News</h1>
+			<div class="news-filter pull-left col-md-12 no-padding">
+				<a href="#" class="tag-box"><span>#news</span></a>
+				<a href="#" class="tag-box"><span>#publications</span></a>
+				<a href="#" class="tag-box"><span>#new-features</span></a>
+				<a href="#" class="tag-box"><span>#dphep-portal</span></a>
+				<a href="#" class="tag-box"><span>#general</span></a>
+				<a href="#" class="tag-box"><span>#institutes</span></a>
+				<a href="#" class="tag-box"><span>#SLAC</span></a>
+			</div>
+		</div>
+		<div class="news-container col-md-12 no-padding">
+			<div class="news-box col-md-10"> 
+				<div class="header">
+					<div class="info pull-left">
+						<div class="title">News Title 1<span>+3</span></div>
+						<div class="details">posted by <a href="#">John Doe</a>, 4 days ago</div>
+					</div>
+					<div class="more pull-right">
+						<div class="category">
+							<a href="#" class="tag-box"><span>#new-features</span></a>
+							<a href="#" class="tag-box"><span>#dphep-portal</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="body pull-left">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque commodi rerum minus ad quo dicta consequuntur officiis alias a facilis! Quidem, vero, fugiat maiores perspiciatis harum odit unde beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, consequuntur, vitae, nihil, voluptate cum numquam deleniti ducimus assumenda autem hic error aliquid amet ullam nostrum id voluptatem harum dolore iure.
+				</div>
+			</div>
+			<div class="news-box col-md-10">
+				<div class="header">
+					<div class="info pull-left">
+						<div class="title">News Title 2 </div>
+						<div class="details">posted by <a href="#">admin</a>, 45 days ago</div>
+					</div>
+					<div class="more pull-right">
+						<div class="category">
+							<a href="#" class="tag-box"><span>#publications</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="body pull-left">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, quae, placeat quo reiciendis enim quasi quisquam atque architecto libero accusantium voluptatem sint assumenda aperiam iure facilis ducimus deserunt ullam aspernatur.
+				</div>
+			</div>
+			<div class="news-box col-md-10">
+				<div class="header">
+					<div class="info pull-left">
+						<div class="title">News Title 3<span>+4</span></div>
+						<div class="details">posted by <a href="#">Alice B</a>, 1 week ago</div>
+					</div>
+					<div class="more pull-right">
+						<div class="category">
+							<a href="#" class="tag-box"><span>#dphep-portal</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="body pull-left">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, repellendus, necessitatibus, sunt nostrum deserunt sequi modi voluptates ad animi similique nemo sapiente cum? Autem maxime illum nemo! Adipisci, dolorum, soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quisquam non quaerat voluptate dicta enim nesciunt optio suscipit beatae reiciendis? Nemo, fugiat magni natus perferendis obcaecati fuga illum distinctio repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, quos dolore illo aspernatur sint! Est, eum culpa quis maiores sed dignissimos tempora modi incidunt illum eveniet! Eum, quia commodi qui!
+				</div>
+			</div>
+			<div class="news-box col-md-10">
+				<div class="header">
+					<div class="info pull-left">
+						<div class="title">News Title 4<span>+5</span></div>
+						<div class="details">posted by <a href="#">John Doe</a>, 2 weeks ago ago</div>
+					</div>
+					<div class="more pull-right">
+						<div class="category">
+							<a href="#" class="tag-box"><span>#general</span></a>
+							<a href="#" class="tag-box"><span>#dphep-portal</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="body pull-left">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, fugit, ex assumenda ipsum repudiandae tempore libero quae quis consequatur blanditiis magnam recusandae nemo temporibus porro maxime maiores illum harum quibusdam.
+				</div>
+			</div>
+			<div class="news-box col-md-10">
+				<div class="header">
+					<div class="info pull-left">
+						<div class="title">News Title 5<span>+3</span></div>
+						<div class="details">posted by <a href="#">John Doe</a>, last month</div>
+					</div>
+					<div class="more pull-right">
+						<div class="category">
+							<a href="#" class="tag-box"><span>#news</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="body pull-left">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, deserunt, recusandae, dicta eius id incidunt harum quos vero eligendi minus at laudantium aspernatur cupiditate ea tempora rerum ex. Repellat, officia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, in, cumque, provident, quidem esse eius eligendi ut aliquid officia sed eos architecto deleniti est earum dolorem iusto voluptas inventore facilis.
+				</div>
+			</div>
+			<div class="showmore col-md-10 no-padding">
+				<div class="center-block">
+				 	<button class="btn">Show me more...</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+</section>
+
+
+{% endblock body %}
+{% endblock page_body %}
+
+{% block javascript %}
+<script type="text/javascript">
+
+
+	function startTour(){
+	var intro = introJs();
+	intro.setOptions({
+		steps: [
+		   	{
+				element: "#searchbox", 
+				intro: "<b>Filtering & Sorting</b><br/>JS implemented Filtering and Sorting \"on the fly\" feature"
+		   	},
+			{
+				element: "#collectionbox", 
+				intro: "<b>Collection of Data</b><br/>List with the records that will be displayed on the portal"
+			},
+            {
+                element: "#recordbox",
+                intro: "<b>Policy Record</b><br/>Record info box. By pressing on the \"Title\" or the button on the right, you get transfered to the record page. <a href='/data/policy/1'><b>Go to Record Page</b></a>"
+            }
+		]
+		});
+	intro.start();
+}
+
+
+    $(document).ready(function(){
+        var options = {
+            valueNames: ['datatype', 'datatitle', 'dataname', 'datalocation'],
+            item: '<div><ul><li class="datatype"></li><li class="datatitle"></li><li class="dataname"></li><li class="col-md-3"></li><li></li><li></li><li></li></ul></div>'
+        };
+
+        var dataList = new List('collectiondata', options);
+
+        $("#sortInst").click(function(){
+
+        })
+    });
+</script> 
+{% endblock javascript %}

@@ -1,6 +1,9 @@
 {% extends "page.html" %}
 
 {%- js 'js/readmore.js' %}
+{%- js 'js/intro.js' , '20-invenio'  %}
+{%- css 'css/introjs.css' , '40-invenio' %}
+
 <!-- HERE starts the HEADER -->
 {% block header %}
 	{{ super() }}
@@ -10,11 +13,47 @@
 
 
 <!-- HERE starts the BODY -->
+{% block page_body %}
 {% block body %}
 <style>
 
+@media (max-width: 767px) {
+	.review-sub button.btn, .review-sub button.btn:hover {
+		color: #fff;
+		height: auto;
+		margin-left: 0; 
+		background-color: #2B364F;
+		position: relative; 
+		width: inherit;
+		/* bottom: 5px; */
+		margin-top: 10px;
+	}
+
+	.review-sub textarea.form-control {
+		width: inherit;
+		max-width: 100%;
+
+	}
+
+	.info-box.gp{
+		margin-right: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.info-box.gap{
+		margin-right: 15px;
+	}
+
+	.docblock {
+		padding-right: 15px;
+	}
+}
+
+
 .record-blk {
 	background-color: #e6e6e6;
+	padding-top: 10px;
 }
 
 .record-blk .goto-link {
@@ -138,6 +177,7 @@ span.sp-right {
 .info > div {
 	width: 100%;
 	height: 20px;
+	text-align: left;
 }
 
 .rltd-links {
@@ -259,16 +299,18 @@ li.thumb li p {
 }
 
 .reviews .review-box {
-	height: 50px;
+	/*height: 50px;*/
 	padding: 0;
 	color: #666;
 }
 
-.review-box ul, .review-box li {
+.review-box div, .review-box div {
 	padding: 0;
 	margin: 0;
 	list-style: none;
-	height: 50px;
+	/*height: 50px;*/
+	display: inline-block;
+	background-color: inherit;
 }
 
 .reviews .review-box:nth-child(2n){
@@ -283,21 +325,21 @@ li.thumb li p {
 
 }
 
-.review-box li span.glyphicon {
+.review-box > div span.glyphicon {
 	font-size: 20px;
 	padding: 3px;
 }
 
-.review-box li span:last-child{
+.review-box >div span:last-child{
 	padding-left: 3px;
 	font-size: 11px;
 }
 
-.review-box ul > li {
+.review-box div > div {
 	padding: 3px;
 }
 
-.review-box ul > li:last-child {
+.review-box div > div:last-child {
 	padding: 5px;
 }
 
@@ -323,16 +365,20 @@ li.thumb li p {
 	bottom: 5px;
 }
 
+section {
+	padding-left: 10px;
+	padding-right: 10px;
+}
 </style>
 
 
 <section class="content">
-	<div class="container">
+	<div class="container no-padding">
 		<div class="record-blk col-md-offsegt-1 col-md-12">
-			<h2>Policy Ttitle</h2>
+			<h2>Policy Title</h2>
 			<h3>Policy Subtitle</h3>
 			<div style="margin-bottom:15px;">
-				<span style="float:left;" class="pamfilos">by <a href="#">FName LName</a>, <a href="#">FName2 LName2</a><br/>
+				<span style="float:left;">by <a href="#">FName LName</a>, <a href="#">FName2 LName2</a><br/>
 					@ <a href="">CERN</a>, <a href="#">instituteName2</a>
 				</span>
 				<button class="goto-link">DOWNLOAD POLICY</button>
@@ -360,7 +406,7 @@ li.thumb li p {
 				<span class="tag-box tag-bdomain">domain_2</span>
 			</div>
 			<div class="no-padding col-md-9 pull-left">
-				<div class="info-box pol-info" style="margin-right:15px;">
+				<div class="info-box gap pol-info">
 					<header>Policy Summary</header>
 					<div class="" style="padding:5px;height:400px;">
 						<div class="fix-overflow" style="height:300px;">
@@ -380,7 +426,7 @@ li.thumb li p {
 					</div>
 				</div>
 			</div>
-			<div class="pol-geninfo no-padding col-md-3 pull-right">
+			<div class="pol-geninfo no-padding col-xs-12 col-md-3 pull-right">
 				<div class="info-box" style="height:206px;">
 					<header>General Info</header>
 					<div class="info">
@@ -408,7 +454,7 @@ li.thumb li p {
 					</div>
 				</div>
 			</div>
-			<div class="no-padding col-md-3 pull-right">                
+			<div class="no-padding col-md-3 col-xs-12 pull-right">                
 				<div class="info-box" style="height:206px">
 					<header>Contact Details</header>
 					<div class="info">
@@ -433,8 +479,8 @@ li.thumb li p {
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8 no-padding" style="padding-right:15px;">
-				<div class="info-box doc-box col-md-12">
+			<div class="docblock col-md-8 no-padding">
+				<div class="info-box gap doc-box col-md-12">
 					<header>Documents</header>
 					<ul class="thumbs">
 						<li class="thumb">
@@ -481,49 +527,90 @@ li.thumb li p {
 			<div class="info-box reviews col-md-12 no-padding">
 				<header>Reviews</header>
 				<div class="review-box">
-					<ul>
-						<li class="col-md-2">
+					<div class="col-xs-12 col-md-12">
+						<div class="col-xs-4 col-md-2">
 							<span class="glyphicon glyphicon-user"></span>
 							<span><a href="">John Doe</a></span><br/>
 							<span>Posted: 31/03/14 15:46</span>
-						</li>
-						<li class="col-md-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, facere, maxime, at quibusdam dicta quos voluptatibus modi amet nostrum harum delectus dolore natus pariatur similique inventore quasi perferendis eveniet. Rerum.  </li>
-					</ul>
+						</div>
+						<div class="col-xs-8 col-md-10"><p>Lorem ipsum dolor sit amet, consectetur adipisicing edivt. Ab, facere, maxime, at quibusdam dicta quos voluptatibus modi amet nostrum harum delectus dolore natus pariatur simidivque inventore quasi perferendis eveniet. Rerum.</p>  </div>
+					</div>
 				</div>
 				<div class="review-box">
-					<ul>
-						<li class="col-md-2">
+					<div class="col-xs-12 col-md-12">
+						<div class="col-xs-4 col-md-2">
 							<span class="glyphicon glyphicon-user"></span>
-							<span><a href="">Alice B</a></span><br>
+							<span><a href="">Adivce B</a></span><br>
 							<span>Posted: 31/03/14 17:23</span>
-						</li>
-						<li class="col-md-10">Lorem ipsum dolor sit amet!!</li>
-					</ul>
+						</div>
+						<div class="col-xs-8 col-md-10"><p>Lorem ipsum dolor sit amet!!</p></div>
+					</div>
 				</div>
 				<div class="review-box">
-					<ul>
-						<li class="col-md-2">
+					<div class="col-xs-12 col-md-12">
+						<div class="col-md-2 col-xs-4 ">
 							<span class="glyphicon glyphicon-user"></span>
 							<span><a href="">James L</a></span><br>
 							<span>Posted: 03/04/14 11:04</span>
-						</li>
-						<li class="col-md-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, molestias optio perferendis atque temporibus ut nobis earum quis?</li>
-					</ul>
+						</div>
+						<div class="col-xs-8 col-md-10"><p>Lorem ipsum dolor sit amet, consectetur adipisicing edivt. Ipsa, molestias optio perferendis atque temporibus ut nobis earum quis?</p></div>
+					</div>
 				</div>
-				<div class="review-sub col-md-12">
-					<textarea class="form-control" rows="3" type="text" placeholder="Insert your review"></textarea>
-					<button type="submit" class="btn">Post Review</button>
+				<div class="review-sub col-xs-12 col-md-12">
+					<textarea class="form-control col-xs-12" rows="3" type="text" placeholder="Insert your review"></textarea>
+					<button type="submit" class="col-xs-12 btn">Post Review</button>
 				</div>
 			</div>
 		</div>
 	</section>
 
 {% endblock body %}
+{% endblock page_body %}
 <!-- HERE ends the BODY -->
 
 {% block javascript %}
 	{{ super() }}
-    <script>
+
+	<script type="text/javascript">
+
+		function startTour(){
+			var intro = introJs();
+			intro.setOptions({
+				steps: [
+				   	{
+						element: "#step1", 
+						intro: "<b>Content Menu</b><br/> All links are ACTIVE, except from the 'About' page."
+				   	},
+					{
+						element: "#step2",
+						intro: "<b>Sign In/Up and Search bar</b><br/>You can login with credentials<br/>Username: dphep1<br/>Password: dphep1234<br/><br/>**search not implemented**"
+					},
+		            {
+		                element: "#step3",
+		                intro: "<b>Entry Points</b><br/>Basic entry points for the portal's main usages<br/>***<i>Research</i> and <i>Submit</i> pages are ACTIVE***"
+		            },
+		            {
+		                element: "#researchers",
+		                intro: "<b>Do Research</b><br/>Directs you to the <i>Collections</i> page, where a list of records, policies, etc are presented and searchable <a style=\"color=#bb6;\" href='/find'>Take me there!</a>"
+		            },
+		            {
+		                element: "#submissions",
+		                intro: "<b>Submit your Data</b><br/>Directs you to the <i>Submission</i> page <a href='/submit'>Take me there!</a>"
+		            },
+		            {
+		                element: "#step4",
+		                intro: "<b>News and Events</b><br/>Displays <i>Latest News</i> and <i>Featured Events</i><br/>****Nothing more here to see or goto for now"
+		            },
+		            {
+		                element: "#step5",
+		                intro: "<b>Quick Search Area</b><br/>Basically tag area with fast ways to send you to features and noteworthy stuff on the portal<br/>****Nothing more here to see or goto for now"
+		            },
+					
+
+				]
+				});
+			intro.start();
+		}
         $(".fix-overflow").readmore({
             maxHeight: 200,
             moreLink: '<a href="#">Read more</a>',

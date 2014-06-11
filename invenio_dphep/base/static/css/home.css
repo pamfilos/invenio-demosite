@@ -212,7 +212,7 @@ section {
 
 .mission h4 {
     text-align: center;
-    font-weight: bold;
+    font-weight: 300;
     font-size: 23px;
     border-bottom: 1px solid;
     padding-bottom: 65px;
@@ -295,7 +295,6 @@ footer .community {
 }
 
 .news-group {
-    margin-top: 30px;
     background-color: #fff;
 }
 

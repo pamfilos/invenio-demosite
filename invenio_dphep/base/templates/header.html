@@ -20,7 +20,7 @@
       </div>  
 
       <div class="pull-right mob">
-        <div class="mob-down">
+        <div id="step1" data-intro="First" class="mob-down">
           <div class="navbar-collapse sm-nav collapse pull-left down" id="collapse-toggle-nav1">
               <ul class="nav navbar navbar-right">
                 <li class="scndry-nav"><a href="{{ url_for('about') }}">ABOUT</a></li>
@@ -31,7 +31,7 @@
               </ul>
             </div>
         </div>
-          <div class="mob-up">
+          <div id="step2" data-intro="Second" class="mob-up">
             <div class="navbar-collapse collapse pull-left down" id="collapse-toggle-nav2">
               <ul class="nav navbar navbar-right">
                 {% if current_user.is_guest %}
@@ -55,7 +55,7 @@
                   {% else %}
                   <li>
                      <a href="{{ url_for('webaccount.logout') }}"><span class="glyphicon glyphicon-off"></span>
-                      Log out
+                      <span class="hidden-sm">Log out</span><!-- <span class="visible-sm">,</span> -->
                     </a>
                   </li>
                   <li>
@@ -80,4 +80,7 @@
       </div>
     </div>
   </nav>
+ <!--  <div class="nav-breadcrumb">
+    
+  </div> -->
 

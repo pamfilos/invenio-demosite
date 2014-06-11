@@ -2,8 +2,12 @@
 
 {%- css 'css/home.css' , '10-invenio' %}
 {%- css 'css/accordion.css',  '10-invenio' %}
+{%- css 'css/introjs.css' , '40-invenio' %}
+
 {%- js 'js/home.js' %}
 {%- js 'js/accordion.js' %}
+{%- js 'js/intro.js' , '20-invenio'  %}
+
 <!-- HERE starts the HEADER -->
 
 <!-- HERE ends the HEADER -->
@@ -13,10 +17,26 @@
 {% block page_body %}
 {% block body %}
 
+<div style="position:fixed;top=0;left=0;padding=9px;">
+	<a href="#" onclick="javascript:startTour();">Click Here for a TOUR!!</a>
+</div>
+
 <section class="entry-points" style="background-color: #e8e8e8;">
-    <div class="container no-padding">
+    <div id="step3" class="container no-padding">
 
         <div class="accordion col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-10">
+            <div id="educational" class="panel panel-notmob">
+                <h2 class="panel-title" style="display:block;"><i>LEARN MORE</i></h2>
+                <div class="panel-inner">
+                    <div class="panel-content">
+                        <a href="{{ url_for('about') }}">
+                            <h3>RESEARCH AND LEARN</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, recusandae, vitae, veritatis, placeat reiciendis suscipit ipsam ex assumenda minus nulla voluptas facere labore asperiores.</p>
+                            <p class="go">Read about us</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div id="researchers" class="panel panel-notmob">
                 <h2 class="panel-title" style="display:block;"><i>DO RESEARCH</i></h2>
                 <div class="panel-inner">
@@ -29,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div id="submissions" class="panel panel-notmob">
+            <div  id="submissions" class="panel panel-notmob">
                 <h2 class="panel-title" style="display:block;"><i>SUBMIT DATA</i></h2>
                 <div class="panel-inner">
                     <div class="panel-content">
@@ -41,26 +61,15 @@
                     </div>
                 </div>
             </div>
-            <div id="educational" class="panel panel-notmob">
-                <h2 class="panel-title" style="display:block;"><i>LEARN MORE</i></h2>
-                <div class="panel-inner">
-                    <div class="panel-content">
-                        <a href="{{ url_for('learn') }}">
-                            <h3>RESEARCH AND LEARN</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, recusandae, vitae, veritatis, placeat reiciendis suscipit ipsam ex assumenda minus nulla voluptas facere labore asperiores.</p>
-                            <p class="go">Learn with us</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
             <div id="fundings" class="panel panel-notmob">
-                <h2 class="panel-title" style="display:block;"><i>CONTRIBUTE</i></h2>
+                <h2 class="panel-title" style="display:block;"><i>TAKE PART</i></h2>
                 <div class="panel-inner">
                     <div class="panel-content">
                         <a href="{{ url_for('fund') }}">
-                            <h3>EDUCATE YOURSELF</h3>
+                            <h3>CONTRIBUTE</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, recusandae, vitae, veritatis, placeat reiciendis suscipit ipsam ex assumenda minus nulla voluptas facere labore asperiores.</p>
-                            <p class="go">Look for DATA</p>
+                            <p class="go">Learn more</p>
                         </a>
                     </div>
                 </div>
@@ -70,9 +79,9 @@
 </section>
 
 <section class="news-group">
-    <div class="container">
+    <div id="step4" class="container">
     <div class="news" style="background-color:green;">
-            <div class="col-xs-12 col-sm-5 col-md-4 no-padding">
+            <div  class="col-xs-12 col-sm-5 col-md-4 no-padding">
                 <ul class="list-group latest">
                     <li class="list-group-item title">
                         <h5 style="float:left;font-size:20px;font-weight:bold;"><span class="glyphicon glyphicon-th-list"></span> Latest News</h5>
@@ -122,7 +131,7 @@
             </div>
             
 
-            <div class="col-xs-12 col-sm-7 col-md-8 no-padding">
+            <div  class="col-xs-12 col-sm-7 col-md-8 no-padding">
               <!--   <div class="transition-block">
                     <span class="glyphicon glyphicon-minus" style="font-size:20px;"></span>
                     <span class="glyphicon glyphicon-minus" style="font-size:20px;"></span>
@@ -187,7 +196,7 @@
     </div>
 </section>
 
-<section class="searching"  style="background-color: #e8e8e8;">
+<section id="step5" class="searching"  style="background-color: #e8e8e8;">
     <div class="container">
         <div class="quick-search col-md-10">
             <div class="qs-box col-xs-12 col-sm-4 col-sm-offset-1 col-md-offset-0 col-md-3">
@@ -279,7 +288,49 @@
 
 <script type="text/javascript">
 
+function startTour(){
+	var intro = introJs();
+	intro.setOptions({
+		steps: [
+		   	{
+				element: "#step1", 
+				intro: "<b>Content Menu</b><br/> All links are ACTIVE, except from the 'About' page."
+		   	},
+			{
+				element: "#step2",
+				intro: "<b>Sign In/Up and Search bar</b><br/>You can login with credentials<br/>Username: dphep<br/>Password: dphep1234<br/><br/>**search not implemented**"
+			},
+            {
+                element: "#step3",
+                intro: "<b>Entry Points</b><br/>Basic entry points for the portal's main features<br/>***<i>Research</i> and <i>Submit</i> pages are ACTIVE***"
+            },
+            {
+                element: "#researchers",
+                intro: "<b>Do Research</b><br/>Directs you to the <i>Collections</i> page, where a list of records, policies, etc are presented and searchable <a style=\"color=#bb6;\" href='/find'>Take me there!</a>"
+            },
+            {
+                element: "#submissions",
+                intro: "<b>Submit your Data</b><br/>Directs you to the <i>Submission</i> page <a href='/submit'>Take me there!</a>"
+            },
+            {
+                element: "#step4",
+                intro: "<b>News and Events</b><br/>Displays <i>Latest News</i> and <i>Featured Events</i><br/>****Nothing more here to see or goto for now"
+            },
+            {
+                element: "#step5",
+                intro: "<b>Quick Search Area</b><br/>Basically tag area with fast ways to send you to features and noteworthy stuff on the portal<br/>****Nothing more here to see or goto for now"
+            },
+			
+
+		]
+		});
+	intro.start();
+}
+
+
+
 (function($){
+
     if( window.innerWidth < 768){
         width = $(".panel").css("width");
         $(".panel").css("height", width);

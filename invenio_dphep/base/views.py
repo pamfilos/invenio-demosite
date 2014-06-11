@@ -42,9 +42,9 @@ def index():
 @blueprint.route('/about')
 def about():
 	try:
-		return render_template('index.html')
+		return render_template('about.html')
 	except TemplateNotFound:
-		abort(404)
+		redirect(url_for('.index'))
 
 @blueprint.route('/workshops')
 def workshops():
@@ -60,6 +60,14 @@ def people():
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
+@blueprint.route('/people/institutes')
+def people_by_institutes():
+	try:
+		return render_template('people_byInstitute.html')
+	except TemplateNotFound:
+		redirect(url_for('.index'))
+
+
 @blueprint.route('/press')
 def press():
 	try:
@@ -68,7 +76,7 @@ def press():
 		redirect(url_for('.index'))
 
 @blueprint.route('/find')
-def search():
+def find():
 	try:
 		return render_template('find.html')
 	except TemplateNotFound:
@@ -88,9 +96,30 @@ def learn():
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
-@blueprint.route('/fund')
+@blueprint.route('/contribute')
 def fund():
 	try:
-		render_template('fund.html')
+		return render_template('fund.html')
 	except TemplateNotFound:
 		redirect(url_for('.index'))
+
+@blueprint.route('/keynotes')
+def keynote():
+	try:
+		return render_template('keynotes.html')
+	except TemplateNotFound:
+		redirect(url_for('.index'))
+
+@blueprint.route('/news')
+def news():
+	try:
+		return render_template('news.html')
+	except TemplateNotFound:
+		redirect(url_for('.index'))
+
+@blueprint.route('/test/<page>')
+def test(page):
+	try:
+		return render_template('%s.html' % page)
+	except TemplateNotFound:
+			abort(404)

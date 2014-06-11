@@ -1,5 +1,6 @@
 {% extends 'page.html' %}
 
+{%- js url_for('static', filename='/js/jquery.tagify.js') %}
 
 
 {% block page_body %}
@@ -13,6 +14,7 @@
 	font-family: 'Open Sans';
 	padding: 15px;
 	display: inline-block;
+	margin-top: 30px;
 }
 
 .submit-panel header {
@@ -194,10 +196,38 @@ input[type="text"].tm-input {
 .form-horizontal .control-group.tm-group {
   margin-bottom: 15px;
 }
+
+.top_info {
+	background-color: #e6e6e6;
+	display: block;
+	margin-top: 20px;
+	padding: 10px;	
+	overflow: auto;
+}
+
+.top_info h2 {
+	margin-top: 5px;
+}
+.top_info span {
+	display: block;
+}
+.top_info .btn {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	background-color: #666;
+	float: left;
+	color: #fff;
+}
 </style>
 
 <section class="content">
 	<div class="container">
+		<div class="top_info col-md-12">
+			<h2>OUR DATA</h2>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, rerum, nemo, reiciendis, a consequuntur provident ut modi minima ullam omnis ducimus maxime officiis doloribus quod ex accusantium perspiciatis illo consectetur.</span>
+			<a href="{{ url_for('find')}} " class="btn">Go to our Data Collection</a>
+		</div>
 		<div class="submit-panel">
 			<header><h3>CREATE NEW EXPERIMENT PAGE</h3></header>
 			<div class="exp-submit">
@@ -257,5 +287,9 @@ input[type="text"].tm-input {
 {% endblock page_body %}
 
 {% block javascript %}
-
+<script >
+$(document).ready($(function(){
+	$(".tagify").tagsManager();
+}));
+</script>
 {% endblock javascript %}

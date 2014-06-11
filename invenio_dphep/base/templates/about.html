@@ -1,0 +1,178 @@
+{% extends 'page.html' %}
+
+
+
+{% block page_body %}
+{% block body %}
+
+<style>
+	
+	.content {
+		 color: #818181;
+	}
+
+	#top-info {
+		font-size: 30px;
+		color: #818181;
+		padding-top: 30px;
+		padding-bottom: 60px;
+		background-color: #e8e8e8;
+		text-align: center;
+		font-weight: 100;
+	}
+
+	.about-info {
+		padding: 35px 0;
+
+	}
+
+
+	.about-info .msg {
+		font-size: 17px;
+		padding: 20px 0;
+		text-align: justify;
+		letter-spacing: 0.3;
+	}
+
+	#approach {
+		text-align: right;
+	}
+
+	#approach ul { 
+		padding: 20px;
+		margin:0;
+		list-style: decimal;
+		width: 90%;
+		float: right;
+		/*font-weight: bold;*/
+	}
+
+	#approach li {
+		margin: 10px 20px;
+		font-family: Open Sans;
+		font-weight: lighter;	
+	}
+
+	.about-info a,.about-info a:hover, .about-info a:visited {
+		margin: 0;
+		font-size: 16px;
+		color: #428bca;
+	}
+
+	#partners {
+		text-align: right;
+	}
+
+
+	.num-l{
+		position: relative;
+		float: left;
+		font-size: 155px;
+		color: #ccc;
+		top: -40;
+		left: -50;
+		font-weight: bolder;
+		font-style: italic;
+
+	}
+
+	.num-r {
+		position: relative;
+		float: right;
+		font-size: 155px;
+		color: #ccc;
+		top: -40;
+		right: -50;
+		font-weight: bolder;
+		font-style: italic;
+	}
+</style>
+
+
+<section class="content"style="background-color:#e8e8e8;" >
+
+	<div id="top-info" style="background-color:#e8e8e8;">
+		<div class="container">
+				High Energy Physics experiments initiate with this Study Group a common reflection on data persistency and long term analysis in order to get a common vision on these issues and create a multi-experiment dynamics for further reference.
+		</div>
+	</div>
+	<div id="problem" class="about-info" style="background-color:#fff">
+		<div class="container">
+			<div class="num-r">1</div>
+			<div class="title">
+				<h1>The Problem</h1>
+			</div>
+			<div class="msg">
+				The data from the world’s particle accelerators and colliders is both costly and time consuming to produce.
+It contains a wealth of scientific potential, plus high value for educational outreach.
+Given that much of the data is unique, it is essential to preserve not only the data but also the full capability to reproduce past analyses and perform new ones.
+There are numerous cases where data from a past experiment was re-analyzed: we must retain the ability in the future
+			</div>
+		</div>
+	</div>
+	<div id="approach" class="about-info">
+		<div class="container">
+			<div class="num-l">2</div>
+			<div class="title">
+				<h1>The Approach</h1>
+			</div>
+			<div  class="msg">
+				Whilst retaining a holistic view, the problem is broken down into a number of key areas. Each is addressed using state-of-the-art techniques, that include:
+				<ul>
+					<li>Digital library tools (<a href="http://www.invenio-software.org"><b>Invenio</b></a>) & services ( <a href="http://cds.cern.ch"><b>CDS</b></a>, <a href="http://www.inspirehep.net"><b>INSPIRE</b></a>, <a href="http://www.zenodo.org"><b>ZENODO</b></a> ), together with a Portal</li>
+					<li>Sustainable software, coupled with advanced virtualization techniques and validation frameworks
+					</li>
+					<li>Proven bit preservation at the 100PB scale, together with a sustainable funding model with an outlook to 2040/50, and growing to 5-10EB</li>
+					<li>Open Data – over and above simple Open Access</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="about-info" style="background-color:#fff;">
+		<div class="container">
+			<div class="num-r">3</div>
+			<div class="title">
+				<h1>Results</h1>
+			</div>
+			<div class="msg">Several tens of PB of data – from the BaBar experiment at <a href="https://www.slac.stanford.edu"><b>SLAC</b></a>, the CDF and D0 experiments at <a href="https://www.fnal.gov"><b>Fermilab</b></a>, as well as the H1, HERMES and ZEUS experiments at <a href="http://www.desy.de"><b>DESY</b></a> are preserved.
+More than 100PB of data from the LEP and LHC experiments at <a href="http://www.cern.ch"><b>CERN</b></a>, is also addressed with a strong focus on sustainable services, support and funding.
+These preservation activities build on the tools and services listed above.</div>
+		</div>
+	</div>
+	<div id="partners" class="about-info">
+		<div class="container">
+			<div class="num-l">4</div>
+			<div class="title">
+				<h1>Partners</h1>
+			</div>
+			<div class="msg">
+				DPHEP involves all major laboratories and experiments worldwide, plus a number of key funding agencies.
+Working through the <a href="https://rd-alliance.org"><b>RDA</b></a>, the <a href="http://www.ada.edu.au"><b>APA</b></a> and others, the intent is to share experience, services and tools as widely as possible.
+Bit preservation experience and services at the 100PB scale were presented at the RDA Europe event (Sep 2013).
+Detailed curation costs were shown at the 4C workshop held after iPRES 2013.
+			</div>
+		</div>
+	</div>
+	<div class="about-info" style="background-color:#fff;">
+		<div class="container">
+			<div class="num-r">5</div>
+			<div class="title">
+				<h1>Conclusions</h1>
+			</div>
+			<div class="msg">
+				DPHEP can bring valuable experience, tools and services to help tackle the Long Term Data Preservation issue for all disciplines.
+Peer-to-peer collaboration with other communities – and targetted funding – are the keys to building a sustainable long-term solution.
+Significant experience with designing software for long-term sustainability as well as migrations across many generations of computing infrastructures are also expected to be important.
+			</div>
+		</div>
+	</div>
+	
+
+</section>
+
+{% endblock body %}
+{% endblock page_body %}
+
+{% block javascript %}
+
+{% endblock javascript %}
