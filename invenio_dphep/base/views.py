@@ -23,9 +23,11 @@
 
     Demosite interface.
 """
+from invenio.base.i18n import _
 
 from flask import Blueprint, render_template, redirect, url_for
 from jinja2 import TemplateNotFound
+from flask.ext.breadcrumbs import register_breadcrumb
 
 blueprint = Blueprint('invenio_dphep', __name__, url_prefix='',
                       template_folder='templates', static_folder='static')
@@ -41,29 +43,34 @@ def index():
 
 @blueprint.route('/about')
 def about():
+	title = _('About')
 	try:
-		return render_template('about.html')
+		return render_template('about.html', title=title)
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
 @blueprint.route('/workshops')
+# @register_breadcrumb(blueprint, '.workshops', _('Workshops'))
 def workshops():
+	title = _("Workshops")
 	try:
-		return render_template('workshops.html')
+		return render_template('workshops.html', title=title )
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
 @blueprint.route('/people')
 def people():
+	title = _('People')
 	try:
-		return render_template('people.html')
+		return render_template('people.html', title=title)
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
 @blueprint.route('/people/institutes')
 def people_by_institutes():
+	title = _('People')
 	try:
-		return render_template('people_byInstitute.html')
+		return render_template('people_byInstitute.html', title=title)
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
@@ -118,6 +125,7 @@ def news():
 		redirect(url_for('.index'))
 
 @blueprint.route('/test/<page>')
+# @register_breadcrumb(blueprint, '.news', _('Page'))
 def test(page):
 	try:
 		return render_template('%s.html' % page)

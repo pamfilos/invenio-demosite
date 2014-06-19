@@ -1,9 +1,9 @@
 {% extends 'page.html' %}
 
-{%- js 'js/list.min.js' %}
-{%- js 'js/intro.js' , '20-invenio'  %}
+{%- js url_for('static', filename='js/list.min.js') %}
+{%- js url_for('static', filename='js/intro.js') , '20-invenio'  %}
 
-{%- css 'css/introjs.css' , '40-invenio' %}
+{%- css url_for('static', filename='css/introjs.css') , '40-invenio' %}
 
 
 {% block page_body %}
@@ -47,7 +47,7 @@
 	}
 
 	.tag-box span {
-		background-color: #ccc;
+		background-color: #8a8a8a;
 		color: #fff;
 		padding: 1px 3px;
 		border-radius: 2px;
@@ -101,7 +101,7 @@
 	}
 
 	.news-box .category .tag-box {
-		background-color: #ccc;
+		background-color: #8a8a8a;
 		color: #666;
 		padding: 2px;
 	}

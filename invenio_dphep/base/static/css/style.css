@@ -81,7 +81,7 @@
     display: none;
 }
 .mob .search-bar .btn{
-    padding: 10px 12px;
+    padding: 7px 9px;
 }
 
 
@@ -90,6 +90,7 @@
 
 header .navbarOutter .container {
     padding: 0;
+    margin: 0 10px;
 }
 
 .mob-up .down {
@@ -113,9 +114,99 @@ header .navbarOutter .container {
     border-bottom: 1px solid #ccc;
 }
 
+/*.breadcrumb {
+    border-radius: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.breadcrumb li a {
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+
+}
+.breadcrumb li {
+    padding: 10px;
+    float: left;
+}*/
+
+.breadcrumb {
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.breadcrumb li{
+  float: left;
+}
+
+.breadcrumb a{
+  padding: .7em 1em .7em 2em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background-color: #fff;
+  margin-right: 0;
+}
+
+.breadcrumb li:first-child a{
+  padding-left: 1em;
+}
+
+.breadcrumb a:hover{
+  background: #fff;
+}
+
+.breadcrumb a::after,
+.breadcrumb a::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -1.5em;   
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  border-left: 1em solid;
+  right: -1em;
+}
+
+.breadcrumb a::after{ 
+  z-index: 2;
+  border-left-color: #fff;  
+}
+
+.breadcrumb a::before{
+  border-left-color: #e6e6e6;  
+  right: -1.1em;
+  z-index: 1; 
+}
+
+.breadcrumb a:hover::after{
+  border-left-color: #fff;
+}
+
+.breadcrumb .active,
+.breadcrumb .active:hover{
+  font-weight: bold;
+  background: none;
+}
+
+.breadcrumb .active::after,
+.breadcrumb .active::before{
+  content: normal;  
+}
+
+.breadcrumb>li+li:before {
+    content: normal;
+}
 
 
 @media (min-width: 768px) and (max-width: 991px) {
+
 
    .mob-up .down .navbar li {
         background-color: auto;
@@ -337,7 +428,10 @@ header .navbarOutter .container {
     .mob-up .nav li:last-child form {
         width: 150px;
         height: 30px;
-        background-color: #666;
+        background-color: #fff;
+        box-shadow: 0 1px 6px #ccc;
+        -moz-box-shadow: 0 1px 6px #ccc;
+        -webkit-box-shadow: 0 1px 6px #ccc;
     }
 }
 
@@ -360,7 +454,7 @@ section{
 body {
     padding: 0;
     font-family: 'Open Sans';
-    background: #fff;
+    background: #e8e8e8;
     color: #666;
 }
 
@@ -381,10 +475,21 @@ body a:visited {
     text-decoration: none;
 }
 
+.top-container.container {
+    width: auto;
+    padding: 0 15px;
+}
+
 header {
     background-color: #e8e8e8;
 }
 
+
+/******************/
+.mob > div >div> ul > li > a{
+    font-size: 10px;
+    font-weight: 400;
+}
 .content {
     display: block;
 }
@@ -415,7 +520,7 @@ header {
 .navbarOutter { 
     font-size: 12px;
     min-height: 32px !important;
-    border-top: 5px solid #666;
+    /*border-top: 5px solid #666;*/
     margin-bottom: 0;
 }
 
@@ -461,23 +566,27 @@ header {
 
 .logo {
     padding-top: 10px;
-    padding-bottom: 30px;width: 220px;
+    padding-bottom: 10px;
+    width: 220px;
 }
 
 .logo a {
     display: block;
 }
-
+/*******************/
 .logo .logoin  {
     line-height: 0.7;
     text-align: left;
     padding-top: -10px;
     color: #666;
-    width: 230px;
+    width: 170px;
+    /*width: 230px;*/
 }
 
+/*******************/
 .logo .logoin  .sp0{
-    font-size: 45px;
+    font-size: 30px;
+    /*font-size: 45px;*/
     font-weight: 900;
     letter-spacing: -0.04em;
     text-align: left;
@@ -487,8 +596,10 @@ header {
     margin-bottom: 8px;
 }
 
+/*******************/
 .logo .logoin .sp1{
-    font-size: 30px;
+    font-size: 20px;
+    /*font-size: 30px;*/
     letter-spacing: -0.05em;
     text-align: center;
     padding: 0;
@@ -496,8 +607,10 @@ header {
     color: #A2A2A2;
 }
 
+/*******************/
 .logo .logoin .sp2{
-    font-size: 30px;
+    font-size: 20px;
+    /*font-size: 30px;*/
     font-weight: 600;
     letter-spacing: -0.05em;
     text-align: left;
@@ -558,11 +671,11 @@ header {
 }
 
 .tag-btopic {
-    background-color: #2B364F;
+    background-color: #B9A2A2;
 }
 
 .tag-bdomain {
-    background-color: #4C7EB0;
+    background-color: #8D8D8D;
 }
 
 .btn-group .btn.dropdown-toggle {

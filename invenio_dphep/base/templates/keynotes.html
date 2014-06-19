@@ -6,9 +6,9 @@
 
 {% endblock head %}
 
-{%- css 'css/workshop.css' -%}
-{%- css 'css/home.css' -%}
-{%- css 'css/icomoon.css'  -%}
+{%- css url_for('static', filename='css/workshop.css') -%}
+{%- css url_for('static', filename='css/home.css') -%}
+{%- css url_for('static', filename='css/icomoon.css')  -%}
 <!-- HERE starts the HEADER -->
 {% block header %}
 	{{ super() }}

@@ -1,9 +1,16 @@
+body {
+	background: #e8e8e8;
+}
+
+
+
 input {
 	padding: 1px 10px;
 	font-size: 12px;
 	/*border-radius: 3px;*/
 	/*background-color: #ccc;*/
 	color: #ccc;
+	background-color: inherit;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	border: 0;
@@ -11,15 +18,19 @@ input {
 }
 	
 .top_info {
-	background-color: #e6e6e6;
+	background-color: #f5f5f5;
 	display: block;
 	margin-top: 20px;
 	padding: 10px;	
 	overflow: auto;
+	-moz-box-shadow:    0 1px 2px 0px #ccc;
+	-webkit-box-shadow: 0 1px 2px 0px #ccc;
+	box-shadow:         0 1px 2px 0px #ccc;
 }
 
 .top_info h2 {
 	margin-top: 5px;
+	color: #333;
 }
 .top_info span {
 	display: block;
@@ -28,7 +39,7 @@ input {
 	display: block;
 	margin-top: 10px;
 	margin-bottom: 5px;
-	background-color: #666;
+	background-color: #333;
 	float: left;
 	color: #fff;
 }
@@ -46,10 +57,19 @@ input {
 	display: block;
 }
 
+.collection label {
+	color: #333;
+	font-size: 16px;
+	font-weight: 400;
+}
+
 .searchbox {
 	overflow: auto;
 }
 
+.cdata_panel a {
+	font-size: 14px;
+}
 
 @media (max-width: 600px) {
 	.collection .pull-right{
@@ -64,7 +84,7 @@ input {
 	background-color: #eee;	
 	height: 55px;
 	padding: 10px 0;
-	
+	color: #333;
 }
 
 
@@ -132,12 +152,13 @@ input {
 
 .cdata_panel {
 	border-bottom : 1px solid rgba(204, 204, 204, 0.19);
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	/*-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);*/
+	/*box-shadow: 0 1px 1px rgba(0, 0, 0, .05);*/
 	padding: 0;
 	overflow: auto;
 	width: 100%;
 	float: left;
+	background-color: #fff;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -159,10 +180,13 @@ input {
 }
 	
 .top_info {
-	background-color: #e6e6e6;
+	background-color: #f5f5f5;
 	display: block;
 	margin-top: 20px;
 	padding: 10px;	
+	-moz-box-shadow:    0 1px 2px 0px #ccc;
+	-webkit-box-shadow: 0 1px 2px 0px #ccc;
+	box-shadow:         0 1px 2px 0px #ccc;
 }
 .top_info h2 {
 	margin-top: 5px;
@@ -174,7 +198,7 @@ input {
 	display: block;
 	margin-top: 10px;
 	margin-bottom: 5px;
-	background-color: #666;
+	background-color: #333;
 	float: left;
 	color: #fff;
 }
@@ -298,5 +322,7 @@ input {
 }
 
 
-
+#searchbox .btn {
+	background-color: #fff;
+}
 

@@ -1,10 +1,10 @@
 {% extends 'page.html' %}
 
-{%- js 'js/list.min.js' %}
-{%- js 'js/intro.js' , '20-invenio'  %}
+{%- js url_for('static', filename='js/list.min.js') %}
+{%- js url_for('static', filename='js/intro.js') , '20-invenio'  %}
 
-{%- css 'css/find.css', 'dphep' %}
-{%- css 'css/introjs.css' , '40-invenio' %}
+{%- css url_for('static', filename='css/find.css'), 'dphep' %}
+{%- css url_for('static', filename='css/introjs.css') , '40-invenio' %}
 
 
 {% block page_body %}

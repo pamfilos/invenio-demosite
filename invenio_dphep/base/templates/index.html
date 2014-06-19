@@ -1,12 +1,12 @@
 {% extends "page.html" %}
 
-{%- css 'css/home.css' , '10-invenio' %}
-{%- css 'css/accordion.css',  '10-invenio' %}
-{%- css 'css/introjs.css' , '40-invenio' %}
+{%- css url_for('static', filename='css/home.css') , 'dphep' %}
+{%- css url_for('static', filename='css/accordion.css'),  'dphep' %}
+{%- css url_for('static', filename='css/introjs.css') , 'dphep' %}
 
-{%- js 'js/home.js' %}
-{%- js 'js/accordion.js' %}
-{%- js 'js/intro.js' , '20-invenio'  %}
+{%- js url_for('static', filename='js/home.js'), 'dphep_js' %}
+{%- js url_for('static', filename='js/accordion.js') , 'dphep_js' %}
+{%- js url_for('static', filename='js/intro.js') , 'dphep_js'  %}
 
 <!-- HERE starts the HEADER -->
 

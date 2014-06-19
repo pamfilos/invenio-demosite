@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 
-{% js 'js/list.min.js' %}
-{%- css 'css/icomoon.css'  -%}
+{% js url_for('static', filename='js/list.min.js') %}
+{%- css url_for('static', filename='css/icomoon.css')  -%}
 
 {% block page_body %}
 
@@ -10,6 +10,15 @@
 
 body {
     background-color: #e8e8e8;
+}
+ header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+ }
+
+header.sticky .sp1, header.sticky .sp2 {
+    display: none;    
 }
 
 .content {
@@ -163,9 +172,12 @@ body {
         width: 100%;
     }
 
+    .ppl-tbl-head {
+         margin
+    }
     .ppl-tbl-head.sticky {
         position: fixed;
-        top: 0;
+        top: 45;
         /*border-bottom: 4px solid #e6e6e6;*/
         display: inline-block;
         z-index: 1000;
@@ -607,7 +619,9 @@ height: 30px;
 
         var win = $(window),
             stickyEl = $(".ppl-tbl-head"), //$("#chooser"),
-            stickyTop = stickyEl.offset().top;
+            stickyTop = stickyEl.offset().top,
+            headerEl = $("header"),
+            headerTop = headerEl.offset().top;
 
         win.scroll(function() {
             var s = $(window).scrollTop(),
@@ -618,11 +632,30 @@ height: 30px;
             $(".loader").css('width', scrollPercent+'%');
 
             console.log("Current scroll percent: " + scrollPercent+"% ======  "+ s +" "+d+" " +c);
-            stickyEl.toggleClass("sticky", win.scrollTop() > stickyTop, function(){
-                $(".contacts").css("margin-top", $(".ppl-tbl-head").height());
+            headerEl.toggleClass("sticky", win.scrollTop() > stickyTop, function(){
+                $("header .sp1").hide();
+                $("header .sp2").hide();
             });
-            
+            stickyEl.toggleClass("sticky", win.scrollTop() > stickyTop, function(){
+                $(".contacts").css("margin-top", $(".ppl-tbl-head").height()+45);
+            });
         });
+    //         win.scroll(function() {
+    //     var s = $(window).scrollTop(),
+    //     d = $("#ppl-tbl").height()- $(".contacts").offset().top,
+    //     c = $(window).height();
+    //     scrollPercent = (s / (d-c)) * 100;
+    //     // $(".twocolordiv").css('right', scrollPercent+"%");
+    //     $(".loader").css('width', scrollPercent+'%');
+
+    //     console.log("Current scroll percent: " + scrollPercent+"% ======  "+ s +" "+d+" " +c);
+    //     stickyEl.toggleClass("sticky", win.scrollTop() > stickyTop, function(){
+    //         $("header .sp1").hide();
+    //         $("header .sp2").hide();
+    //         $(".contacts").css("margin-top", $(".ppl-tbl-head").height());
+    //     });
+        
+    // });
     });
 
 

@@ -1,13 +1,13 @@
 {% extends "page.html" %}
 
-{%- css 'css/home3.css' , '10-invenio' %}
-{%- css 'css/accordion.css',  '10-invenio' %}
-{%- css 'css/introjs.css' , '40-invenio' %}
-{%- css 'css/icomoon.css' %}
+{%- css url_for('static', filename='css/home3.css') , 'dphep' %}
+{%- css url_for('static', filename='css/accordion.css'),  'dphep' %}
+{%- css url_for('static', filename='css/introjs.css') , 'dphep' %}
+{%- css url_for('static', filename='css/icomoon.css') %}
 
-{%- js 'js/home.js' %}
-{%- js 'js/accordion.js' %}
-{%- js 'js/intro.js' , '20-invenio'  %}
+{%- js url_for('static', filename='js/home.js'), 'dphep_js' %}
+{%- js url_for('static', filename='js/accordion.js') , 'dphep_js' %}
+{%- js url_for('static', filename='js/intro.js') , 'dphep_js'  %}
 
 <!-- HERE starts the HEADER -->
 
@@ -85,8 +85,8 @@
             <div  class="col-xs-12 col-sm-5 col-md-4 no-padding">
                 <ul class="list-group latest">
                     <li class="list-group-item title">
-                        <h5 style="float:left;font-size:20px;font-weight:600;"><!-- <span class="icon-newspaper"></span> --> Latest News</h5>
-                        <h6 style="font-size:11px;padding-top:6px;float:right;font-weight:600;"><span ><a href="#">see all news</a></span></h6>
+                        <h5 style="float:left;font-size:20px;font-weight:400;"><!-- <span class="icon-newspaper"></span> --> Latest News</h5>
+                        <h6 style="font-size:11px;padding-top:6px;float:right;font-weight:300;"><span ><a href="{{url_for('news')}}">see all news</a></span></h6>
                     </li>
                         <li class="list-group-item"> 
                             <a href="#">DIS 2013 and HEP-EPS 2013 Proceedings</a>
@@ -107,8 +107,8 @@
             <div class="col-md-4 ">
                 <ul class="list-group keynotes">
                     <li class="list-group-item title">
-                        <h5 style="font-size:20px;float:left;font-weight:600;"><!-- <span class="icon-uniE7C4"></span> --> DPHEP Keynotes</h5>
-                        <h6 style="font-size:11px;float:right;padding-top:6px;font-weight:600;"><span ><a href="#">see all</a></span></h6>
+                        <h5 style="font-size:20px;float:left;font-weight:400;"><!-- <span class="icon-uniE7C4"></span> --> DPHEP Keynotes</h5>
+                        <h6 style="font-size:11px;float:right;padding-top:6px;font-weight:300;"><span ><a href="#">see all</a></span></h6>
                     </li>
                     <li class="list-group-item">
                         <a href="#">ERF Big Data Open Data workshop in Brussels</a>
@@ -130,8 +130,8 @@
                 </div> -->
                 <ul class="list-group featured">
                     <li class="list-group-item title">
-                        <h5 style="font-size:20px;float:left;font-weight:600;"><!-- <span class="icon-calendar"></span>  -->Featured Events</h5>
-                        <h6 style="font-size:11px;float:right;padding-top:6px;font-weight:600;"><span ><a href="#">see all events</a></span></h6>
+                        <h5 style="font-size:20px;float:left;font-weight:400;"><!-- <span class="icon-calendar"></span>  -->Featured Events</h5>
+                        <h6 style="font-size:11px;float:right;padding-top:6px;font-weight:300;"><span ><a href="#">see all events</a></span></h6>
                     </li>
                         <li class="list-group-item event">
                             <span class="status">Upcoming</span>

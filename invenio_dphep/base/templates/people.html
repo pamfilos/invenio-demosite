@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 
-{% js 'js/list.min.js' %}
-{%- css 'css/icomoon.css'  -%}
+{% js url_for('static', filename='js/list.min.js') %}
+{%- css url_for('static', filename='css/icomoon.css')  -%}
 
 {% block page_body %}
 
