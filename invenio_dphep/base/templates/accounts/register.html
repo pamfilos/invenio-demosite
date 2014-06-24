@@ -1,0 +1,18 @@
+{% css url_for('static', filename='css/accounts.css'), 'dphep' %}
+
+{% from "_formhelpers.html" import render_field with context %}
+{% extends "accounts/register_base.html" %}
+{% block title %}{% endblock %}
+
+{% block body %}
+<div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10 well">		
+{% block form scoped %}
+	{{ super() }}
+
+{% endblock form %}
+	</div>
+  </div>
+</div>
+{% endblock body %}

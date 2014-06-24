@@ -1,0 +1,340 @@
+{% extends 'page.html' %}
+
+
+{%- js 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js' , 'dphep-tag' %}
+
+{%- js url_for('static', filename='/js/tagmanager.js'), 'dphep-tag' %}
+{%- js url_for('static', filename='/js/jquery.tagify.js') , 'dphep-tag' %}
+
+{% block page_body %}
+{% block body %}
+
+<style>
+.submit-panel{
+	background-color: #f5f5f5;
+	/*border-radius: 3px;*/
+	color: #333;
+	font-family: 'Open Sans';
+	padding: 15px;
+	display: inline-block;
+	margin-top: 30px;
+	-moz-box-shadow:    0 1px 2px 0px #ccc;
+	-webkit-box-shadow: 0 1px 2px 0px #ccc;
+	box-shadow:         0 1px 2px 0px #ccc;
+}
+
+.submit-panel header {
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: inherit;
+}
+
+.exp-submit {
+	margin: 20px 0;
+	float: left;
+}
+
+.exp-submit label {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	margin-top: 5px;
+	margin-bottom: 3px;
+	font-weight: bold;
+}
+
+.exp-submit input {
+	width: 100%;
+	border-radius: 3px;
+	border: 1px solid #eee;
+	height: 25px;
+	margin-bottom: 5px;
+  	vertical-align: middle !important;
+  	padding: 5px;
+  	font-size: 13px;
+}
+
+.exp-submit textarea{
+	width: 100%;
+	border-radius: 3px;
+	border: 1px solid #eee;
+	height: 215px;
+}
+
+.exp-submit h5 {
+	padding: 0;
+	padding-bottom: 10px;
+	font-size: 15px;
+	/*color: #666;*/
+	margin: 0;
+	font-weight: bold;
+}
+
+.exp-submit .sub-upload {
+	margin: 15px 0;
+} 
+
+.exp-submit h5 span {
+  padding: 0 10px;
+}
+
+.sub-upload input{
+	width: 50%;
+}
+
+.sub-upload input[name*="sub-analysis-"]{
+	width:230px;
+	margin-right: 10px;
+}
+
+.exp-submit .exp-buttons button{
+	border: none;
+	color: #fff;
+	margin-left: 10px;
+	border-radius: 3px;
+	box-shadow: none;
+	padding: 5px 10px;
+}
+
+.exp-buttons button[name=exp-submit]{
+	background-color: #666;
+}
+
+
+input.tagify{
+	width: 130px;
+}
+
+.tm-tag {
+  color: #fff;
+  background-color: #333;
+  display: inline-block;
+  border-radius: 3px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  margin: 0 5px 5px 0;
+  padding: 3px;
+  text-decoration: none;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  -webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  vertical-align: middle;
+}
+.tm-tag .tm-tag-remove {
+  color: #fff;
+  font-weight: bold;
+  margin-left: 4px;
+  opacity: 0.8;
+}
+.tm-tag .tm-tag-remove:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.tm-tag.tm-tag-warning {
+  color: #945203;
+  background-color: #f2c889;
+  border-color: #f0a12f;
+}
+.tm-tag.tm-tag-error {
+  color: #84212e;
+  background-color: #e69ca6;
+  border-color: #d24a5d;
+}
+.tm-tag.tm-tag-success {
+  color: #638421;
+  background-color: #cde69c;
+  border-color: #a5d24a;
+}
+.tm-tag.tm-tag-info {
+  color: #4594b5;
+  background-color: #c5eefa;
+  border-color: #5dc8f7;
+}
+.tm-tag.tm-tag-inverse {
+  color: #cccccc;
+  background-color: #555555;
+  border-color: #333333;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+}
+.tm-tag.tm-tag-inverse .tm-tag-remove {
+  color: #ffffff;
+}
+.tm-tag.tm-tag-large {
+  font-size: 16.25px;
+  border-radius: 4px;
+  padding: 11px 7px;
+}
+.tm-tag.tm-tag-small {
+  font-size: 11.049999999999999px;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+.tm-tag.tm-tag-mini {
+  font-size: 9.75px;
+  border-radius: 2px;
+  padding: 0px 2px;
+}
+.tm-tag.tm-tag-plain {
+  color: #333333;
+  box-shadow: none;
+  background: none;
+  border: none;
+}
+.tm-tag.tm-tag-disabled {
+  color: #aaaaaa;
+  background-color: #e6e6e6;
+  border-color: #cccccc;
+  box-shadow: none;
+}
+.tm-tag.tm-tag-disabled .tm-tag-remove {
+  display: none;
+}
+input[type="text"].tm-input {
+  margin-bottom: 5px;
+  vertical-align: middle !important;
+}
+.control-group.tm-group {
+  margin-bottom: 5px;
+}
+.form-horizontal .control-group.tm-group {
+  margin-bottom: 15px;
+}
+
+.tagify-container {
+background-color: #FFF;
+border: 1px solid #eee;
+border-radius: 2px;
+font-family: Verdana, sans-serif;
+font-size: 12px;
+overflow: auto;
+}
+
+.tagify-container > span {
+display: inline-block;
+padding: 4px;
+margin: 3px;
+border-radius: 2px;
+background-color: #333;
+color: #fff;
+}
+
+.tagify-container > span > a {
+padding-left: 5px;
+color: #888;
+text-decoration: none;
+font-weight: bold;
+}
+
+.tagify-container > input {
+    border: 0 none;
+    width: 100px;
+}
+.tagify-container > input:focus {
+    outline: none;
+}
+
+.top_info {
+	background-color: #f5f5f5;
+	display: block;
+	margin-top: 20px;
+	padding: 10px;	
+	overflow: auto;
+	-moz-box-shadow:    0 1px 2px 0px #ccc;
+	-webkit-box-shadow: 0 1px 2px 0px #ccc;
+	box-shadow:         0 1px 2px 0px #ccc;
+}
+
+.top_info h2 {
+	margin-top: 5px;
+	color: #333;
+}
+.top_info span {
+	display: block;
+}
+.top_info .btn {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	background-color: #333;
+	float: left;
+	color: #fff;
+}
+</style>
+
+<section class="content nofold">
+	<div class="container">
+		<div class="top_info col-md-12">
+			<h2>OUR DATA</h2>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, rerum, nemo, reiciendis, a consequuntur provident ut modi minima ullam omnis ducimus maxime officiis doloribus quod ex accusantium perspiciatis illo consectetur.</span>
+			<a href="{{ url_for('find')}} " class="btn">Go to our Data Collection</a>
+		</div>
+		<div class="submit-panel">
+			<div ><h3>CREATE NEW EXPERIMENT PAGE</h3></div>
+			<div class="exp-submit">
+				<div class="col-md-12">
+					<h5><span class="glyphicon glyphicon-align-center"></span>INSERT EXPERIMENT DESCRIPTION</h5>
+					<div class="pull-left col-md-6">
+						<label for="title">Title</label><input type="text" name="title">
+						<label for="subtitle">Subtitle</label><input type="text" name="subtitle">
+						<br/><br/>
+						<label for="authours">Authors / Contributors</label>
+						<input type="input" name="authours">
+						<label for="nistitutes">Institutes</label>
+						<input type="input" name="institutes">
+					</div>
+					<div class="col-md-6">
+						<label>General Info</label>
+						<textarea name="info" rows="10"></textarea>
+					</div>
+					<div class="col-md-12" style="border-bottom:1px solid #eee;padding-bottom:15px;">
+						<label for="extlinks">External Links</label>
+						<textarea class="extlink-sub" type="text" rows="3" name="extlinks" style="height:100px;"></textarea>
+					</div>
+				</div>
+				<div class="col-md-12" style="padding-top:20px;">
+					<h5><span class="glyphicon glyphicon-tags"></span>TAG YOUR EXPERIMENT</h5>
+					<div class="col-md-6" style="border-right:1px solid #eee;">
+						<label for="tags-topics">Topics</label>
+						<input class="tagify" type="text" name="tags-topics" placeholder="Insert Topic">
+						<input type="hidden" name="tags-topics-hdn">
+						<label for="tags-domains">Domains</label>
+						<input class="tagify" type="text" name="tags-domains" placeholder="Insert Domain">
+						<input type="hidden" name="tags-domains-hdn">
+					</div>
+					<div class="col-md-6">
+						<label for="tags-keywords">Keywords</label>
+						<input class="tagify" type="text" name="tags-keywords" placeholder="Insert Keyword">
+						<input type="hidden" name="tags-keywords-hdn">
+						<label for="tags-countries">Countries Involved</label>
+						<input class="tagify" type="text" name="tags-countries" placeholder="Insert Country">
+						<input type="hidden" name="tags-countries-hdn">
+					</div>
+				</div>
+				<div class="exp-buttons">
+					<div class="pull-right" style="padding:35px 0;">
+						<button type="submit" name="exp-save">Save work for later..</button>
+						<button type="submit" name="exp-submit">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+	</div>
+	
+</section>
+
+{% endblock body %}
+{% endblock page_body %}
+
+{% block javascript %}
+{{ super() }}
+
+<script >
+$(document).ready($(function(){
+	$(".tagify").tagsManager();
+	$("textarea.extlink-sub").tagify({addTagPrompt: 'Add links'});
+}));
+</script>
+{% endblock javascript %}

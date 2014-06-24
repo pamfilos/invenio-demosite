@@ -15,11 +15,8 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1000;
+    top: 0;
  }
-
-header.sticky .sp1, header.sticky .sp2 {
-    display: none;    
-}
 
 .content {
     padding-top: 0;
@@ -104,13 +101,17 @@ header.sticky .sp1, header.sticky .sp2 {
 	margin: 0 15px;
 }
 
-.ppl-tbl-head {
-    overflow: auto;
+.contenttitle {
+    padding-top: 100px;
+    /*overflow: auto;*/
     /*padding-bottom: 15px;*/
     /*border-bottom: 1px solid #eee;*/
+    color: inherit;
+    font-size: inherit;
+    margin: 0;
 }
 
-#ppl-tbl .ppl-tbl-head > div:last-child {
+#ppl-tbl .contenttitle > div:last-child {
     /*float: left;*/
     /*margin-top: 10px;*/
     /*margin-bottom: 5px;*/
@@ -144,22 +145,18 @@ header.sticky .sp1, header.sticky .sp2 {
     }
 
     .list .title button {
-        background-color: #fff;
+        background-color: #f5f5f5;
         font-size: 12px;    
-    }
-    
-    #chooser {
-        padding: 7px 0;
-
     }
 
     #chooser > div  a{
         float: left;
-        padding: 5px;
-        font-size: 13px;
+        padding: 0 6px;
+        font-size: 14px;
+        font-weight: 600;
         margin: 0;
-        border-right: 1px solid #eee;
-        background-color: #fff;
+        border-right: 1px solid #e6e6e6;
+        background-color: #f5f5f5;
     }
 
     #chooser.sticky {
@@ -172,10 +169,10 @@ header.sticky .sp1, header.sticky .sp2 {
         width: 100%;
     }
 
-    .ppl-tbl-head {
+    .contenttitle {
          margin
     }
-    .ppl-tbl-head.sticky {
+    .contenttitle.sticky {
         position: fixed;
         top: 45;
         /*border-bottom: 4px solid #e6e6e6;*/
@@ -183,12 +180,20 @@ header.sticky .sp1, header.sticky .sp2 {
         z-index: 1000;
         background-color: #fff;
         width: 100%;
+        padding-top: 0;
         /*height: 96px;*/
 
         -moz-box-shadow:    0 3px 6px -1px #ccc;
         -webkit-box-shadow: 0 3px 6px -1px #ccc;
         box-shadow:         0 3px 6px -1px #ccc;
     }
+
+    #chooser h3 {
+        float: left;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 100;
+    }    
 
     #chooser span.loader {
         width: 50%;
@@ -197,17 +202,23 @@ header.sticky .sp1, header.sticky .sp2 {
 
     #chooser > div {
         display: inline-block;
+        padding-left: 15px;
     }
     
     #chooser .btn-group {
         float: right;
+        height: 40px;
     }
 
     #chooser .btn-group .btn {
-        background-color: #FFF;
+        background-color: #f5f5f5;
+        padding: 6px 12px;
+        margin-top: 7px;
     }
 
-
+    #chooser .inst span {
+        font-size: 13px;
+    }
     #ppl-tbl > ul li{ 
         float: left;
         padding: 10px;
@@ -223,7 +234,7 @@ header.sticky .sp1, header.sticky .sp2 {
         padding-bottom: 15px;
     }
 
-    #ppl-tbl .ppl-tbl-head > div:last-child {
+    #ppl-tbl .contenttitle > div:last-child {
         /*float: right;*/
         margin-top: 0;
         margin-bottom: 0;
@@ -235,6 +246,10 @@ header.sticky .sp1, header.sticky .sp2 {
         float: left;
         padding-right: 5px;
     }    
+
+    .contacts.sticky{
+        padding-top: 130px;
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -259,6 +274,7 @@ header.sticky .sp1, header.sticky .sp2 {
 #chooser {
     position: relative;
     /*float: left;*/
+    background-color: #fff;
 }
 
 .loader, .inst {
@@ -274,54 +290,20 @@ z-index: -10;
 background-color: #ccc;
 width: 0;
 max-width: 100%;
-height: 30px;
+height: 40px;
+}
+
+.contacts {
+    margin-top: 0;
 }
 </style>
-
-
     <section class="content">
-        
-            <!-- <div class="pull-left">
-                <label for="searchfor">LOOKING FOR:</label><input name="searchfor" class="search" placeholder="filter your search" />
-            </div> -->
-            <!-- <div >
-                <span class="hidden-sm hidden-md hidden-lg">SORT BY: </span>
-                <button id="sortNames" class="sort btn" data-sort="contact" styl><span>Sort by </span> Name</button>
-                
-                <div class="btn-group">
-                    <button id="sortPos" class="sort btn" data-sort="exppos"><span>Sort by </span> Position</button>
-                    <button class="btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="#">CERN</a></li>
-                        <li><a tabindex="-1" href="#">SLAC</a></li>
-                        <li><a tabindex="-1" href="#">DESY</a></li> 
-                    </ul>
-                </div>
-                <div class="btn-group">
-                    <button id="sortInst" class="sort btn" data-sort="institute"><span>Sort by </span> Institute</button>
-                    <button class="btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a tabindex="-1" href="#">CERN</a></li>
-                        <li><a tabindex="-1" href="#">SLAC</a></li>
-                        <li><a tabindex="-1" href="#">DESY</a></li> 
-                    </ul>
-                </div>
-                <div style="border-right: 1px solid #ccc;height: 10px;margin-left: 5px;display: inline-block;"></div> 
-
-
-                
-            </div>-->
-
             <div id="ppl-tbl" class="containe">
             
-            <div class="ppl-tbl-head">
+            <div class="contenttitle">
                 <div id="chooser" class="container no-padding">
-                    <h3>Look for people at:</h3>
-                    <div st><div class="inst">
+                    <span>LOOKING FOR PEOPLE AT:</span>
+                    <div><div class="inst">
                             <a href="#cern"><span>CERN</span></a>
                             <a href="#slac"><span>SLAC</span></a>
                             <a href="#lal"><span>LAL</span></a>
@@ -329,12 +311,12 @@ height: 30px;
                         </div>
                         <div class="loader"></div> </div>
                     <div class="btn-group">
-                        <button type="button" style="font-size:18px;padding:3px 5px;margin-left:5px;border-right:2px solid #e8e8e8;" onclick="removeThumbs();" class="btn icon-file"></button>
-                        <button type="button" style="padding:3px 5px;font-size:18px;" onclick="showThumbs();" class="btn icon-profile"></button>
+                        <button type="button" style="" onclick="removeThumbs();" class="btn icon-file"></button>
+                        <button type="button" style="" onclick="showThumbs();" class="btn icon-profile"></button>
                     </div>
                 </div>
             </div>
-            <div class="contacts container no-padding">
+            <div class="contacts container nno-padding">
                 <ul id="cern" class="list">
                     <li class="title">
                         <span>CERN</span>
@@ -603,7 +585,7 @@ height: 30px;
               target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
               if (target.length) {
                 $('html,body').animate({
-                  scrollTop: target.offset().top - $(".ppl-tbl-head").height()
+                  scrollTop: target.offset().top - $(".contenttitle").height()
                 }, 500);
                 return false;
               }
@@ -618,10 +600,12 @@ height: 30px;
         // Sticky Container Functionality
 
         var win = $(window),
-            stickyEl = $(".ppl-tbl-head"), //$("#chooser"),
+            stickyEl = $(".contenttitle"), // $("#chooser"),
             stickyTop = stickyEl.offset().top,
             headerEl = $("header"),
-            headerTop = headerEl.offset().top;
+            headerTop = headerEl.offset().top,
+            contactsEl = $(".contacts"),
+            contactsTop = contactsEl.offset().top;
 
         win.scroll(function() {
             var s = $(window).scrollTop(),
@@ -636,9 +620,8 @@ height: 30px;
                 $("header .sp1").hide();
                 $("header .sp2").hide();
             });
-            stickyEl.toggleClass("sticky", win.scrollTop() > stickyTop, function(){
-                $(".contacts").css("margin-top", $(".ppl-tbl-head").height()+45);
-            });
+            stickyEl.toggleClass("sticky", win.scrollTop() > stickyTop+50);
+            contactsEl.toggleClass("sticky", win.scrollTop() > stickyTop+50);
         });
     //         win.scroll(function() {
     //     var s = $(window).scrollTop(),
@@ -652,7 +635,7 @@ height: 30px;
     //     stickyEl.toggleClass("sticky", win.scrollTop() > stickyTop, function(){
     //         $("header .sp1").hide();
     //         $("header .sp2").hide();
-    //         $(".contacts").css("margin-top", $(".ppl-tbl-head").height());
+    //         $(".contacts").css("margin-top", $(".contenttitle").height());
     //     });
         
     // });

@@ -65,6 +65,33 @@
 			$(".panel").trigger("cssClassChanged");
 		}        
 	});
+
+	{%- block sticky_js %}
+        var win = $(window),
+            stickyEl = $(".contenttitle"),
+            headerEl = $("header");
+
+        if(headerEl.length){
+            headerTop = headerEl.offset().top;
+        }
+		if(stickyEl.length){
+        	stickyTop = stickyEl.offset().top;
+        }
+        
+        win.scroll(function() {
+
+        	// var s = $(window).scrollTop(),
+        	// d = stickyEl.offset().top,
+        	// c = $(window).height();
+        	// console.log("======  "+ s +" "+d+" " +c);
+            
+            headerEl.toggleClass("sticky", win.scrollTop() >  0, function(){
+                $("header .sp1").hide();
+                $("header .sp2").hide();
+            });
+            stickyEl.toggleClass("sticky", win.scrollTop() > stickyTop+50);
+        });
+  	{%- endblock sticky_js %}
 })(jQuery);
 </script>
 

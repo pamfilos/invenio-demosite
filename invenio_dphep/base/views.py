@@ -37,7 +37,8 @@ blueprint = Blueprint('invenio_dphep', __name__, url_prefix='',
 @blueprint.route('/index')
 def index():
 	try:
-		return render_template('index.html')
+		return render_template('index3.html')
+		# return render_template('index.html')
 	except TemplateNotFound:
 		abort(404)
 
@@ -54,7 +55,8 @@ def about():
 def workshops():
 	title = _("Workshops")
 	try:
-		return render_template('workshops.html', title=title )
+		return render_template('workshops2.html', title=title )
+		# return render_template('workshops.html', title=title )
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
@@ -62,7 +64,8 @@ def workshops():
 def people():
 	title = _('People')
 	try:
-		return render_template('people.html', title=title)
+		return render_template('people_byInstitute.html', title=title)
+		# return render_template('people.html', title=title)
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
@@ -78,21 +81,24 @@ def people_by_institutes():
 @blueprint.route('/press')
 def press():
 	try:
-		return render_template('press.html')
+		return render_template('press2.html')
+		# return render_template('press.html')
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
 @blueprint.route('/find')
 def find():
 	try:
-		return render_template('find.html')
+		return render_template('find2.html')
+		# return render_template('find.html')
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 
 @blueprint.route('/submit')
 def submit():
 	try:
-		return render_template('submit.html')
+		return render_template('submit2.html')
+		# return render_template('submit.html')
 	except TemplateNotFound:
 		redirect(url_for('.index'))
 

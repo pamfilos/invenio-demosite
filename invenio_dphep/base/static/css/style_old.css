@@ -1,9 +1,5 @@
 /*------------- Mobile-first design ## For displays < 768px  -------------*/
 
-.content.nofold {
-    margin-top: 78px;
-}
-
 .mob-toggle {
     margin: 10px;
 }
@@ -20,7 +16,9 @@
 .mob-menu {
     width: 100%;
 }
- 
+.logo {
+    margin: 5px;
+}
 .mob  {
     float: right;
     width: 100%;
@@ -83,7 +81,7 @@
     display: none;
 }
 .mob .search-bar .btn{
-    padding: 7px 9px;
+    padding: 10px 12px;
 }
 
 
@@ -92,7 +90,6 @@
 
 header .navbarOutter .container {
     padding: 0;
-    margin: 0 10px;
 }
 
 .mob-up .down {
@@ -116,95 +113,6 @@ header .navbarOutter .container {
     border-bottom: 1px solid #ccc;
 }
 
-/*.breadcrumb {
-    border-radius: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.breadcrumb li a {
-    font-size: 13px;
-    margin: 0;
-    padding: 0;
-
-}
-.breadcrumb li {
-    padding: 10px;
-    float: left;
-}*/
-
-.breadcrumb {
-    margin-bottom: 0;
-    border-radius: 0;
-    padding: 0 15px;
-    width: 100%;
-}
-
-.breadcrumb li{
-  float: left;
-}
-
-.breadcrumb a{
-  padding: .7em 1em .7em 2em;
-  float: left;
-  text-decoration: none;
-  color: #444;
-  position: relative;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  background-color: #fff;
-  margin-right: 0;
-}
-
-.breadcrumb li:first-child a{
-  padding-left: 1em;
-}
-
-.breadcrumb a:hover{
-  background: #fff;
-}
-
-.breadcrumb a::after,
-.breadcrumb a::before{
-  content: "";
-  position: absolute;
-  top: 50%;
-  margin-top: -1.5em;   
-  border-top: 1.5em solid transparent;
-  border-bottom: 1.5em solid transparent;
-  border-left: 1em solid;
-  right: -1em;
-}
-
-.breadcrumb a::after{ 
-  z-index: 2;
-  border-left-color: #fff;  
-}
-
-.breadcrumb a::before{
-  border-left-color: #e6e6e6;  
-  right: -1.1em;
-  z-index: 1; 
-}
-
-.breadcrumb a:hover::after{
-  border-left-color: #fff;
-}
-
-.breadcrumb .active,
-.breadcrumb .active:hover{
-  font-weight: bold;
-  background: none;
-}
-
-.breadcrumb .active::after,
-.breadcrumb .active::before{
-  content: normal;  
-}
-
-.breadcrumb>li+li:before {
-    content: normal;
-}
 
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -266,66 +174,8 @@ header .navbarOutter .container {
         background-color: #666;
     }
 
-    header {
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
-        top: 0;
-    }
-
-    header.sticky .sp1, header.sticky .sp2 {
-        display: none;    
-    }
-
-    header .navbar {
-        min-height: 0;
-        margin-bottom: 0;
-    }
-
     header .navbarOutter {
         /*border-top-color: red;*/
-    }
-
-
-    .contenttitle.sticky {
-        position: fixed;
-        top: 45;
-        /*border-bottom: 4px solid #e6e6e6;*/
-        display: inline-block;
-        z-index: 1000;
-        background-color: #fff;
-        width: 100%;
-        padding-top: 0;
-        height: 40px;
-        margin: 0;
-
-
-        -moz-box-shadow:    0 3px 6px -1px #ccc;
-        -webkit-box-shadow: 0 3px 6px -1px #ccc;
-        box-shadow:         0 3px 6px -1px #ccc;
-    }
-
-    .contenttitle {
-        padding-top: 100px;
-    }
-    
-    .contenttitle > div {
-        padding: 0 10px;
-        height: 40px;
-        line-height: 40px;
-    }
-
-    .contenttitle span {
-        line-height: 40px;
-        float: left;
-        font-size: 15px;
-    }
-    .contenttitle.sticky span {
-        line-height: 40px;
-    }
-    
-    .contenttitle > .container {
-        background-color: #fff;
     }
 
     .mob-up {
@@ -363,6 +213,7 @@ header .navbarOutter .container {
     text-align: center;
     border-bottom: 0;
     }
+
 
 
     .mob-up * {
@@ -487,10 +338,7 @@ header .navbarOutter .container {
     .mob-up .nav li:last-child form {
         width: 150px;
         height: 30px;
-        background-color: #fff;
-        box-shadow: 0 1px 6px #ccc;
-        -moz-box-shadow: 0 1px 6px #ccc;
-        -webkit-box-shadow: 0 1px 6px #ccc;
+        background-color: #666;
     }
 }
 
@@ -513,7 +361,7 @@ section{
 body {
     padding: 0;
     font-family: 'Open Sans';
-    background: #e8e8e8;
+    background: #fff;
     color: #666;
 }
 
@@ -534,11 +382,6 @@ body a:visited {
     text-decoration: none;
 }
 
-.top-container.container {
-    width: auto;
-    padding: 0 15px;
-}
-
 header {
     background-color: #e8e8e8;
 }
@@ -547,7 +390,7 @@ header {
 /******************/
 .mob > div >div> ul > li > a{
     font-size: 10px;
-    font-weight: 400;
+    font-weight: 600;
 }
 .content {
     display: block;
@@ -579,7 +422,7 @@ header {
 .navbarOutter { 
     font-size: 12px;
     min-height: 32px !important;
-    /*border-top: 5px solid #666;*/
+    border-top: 5px solid #666;
     margin-bottom: 0;
 }
 
@@ -625,8 +468,7 @@ header {
 
 .logo {
     padding-top: 10px;
-    padding-bottom: 10px;
-    width: 220px;
+    padding-bottom: 30px;width: 220px;
 }
 
 .logo a {
@@ -706,8 +548,9 @@ header {
 .contenttitle {
     color: #333;
     font-size: 16px;
-    /*padding: 0 10px;*/
-    /*overflow: auto;*/
+    margin: 10px 0;
+    padding: 0 10px;
+    overflow: auto;
 }
 
 .contenttitle .btn {
@@ -717,9 +560,6 @@ header {
     margin-left: 10px;
 }
 
-.content {
-    padding: 0;
-}
 .tag-box {
     padding: 5px;
     font-size: 11px;
@@ -732,11 +572,11 @@ header {
 }
 
 .tag-btopic {
-    background-color: #B9A2A2;
+    background-color: #2B364F;
 }
 
 .tag-bdomain {
-    background-color: #8D8D8D;
+    background-color: #4C7EB0;
 }
 
 .btn-group .btn.dropdown-toggle {

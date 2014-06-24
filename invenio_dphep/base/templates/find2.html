@@ -10,39 +10,45 @@
 {% block page_body %}
 {% block body %}
 
-<div style="position:fixed;top=0;left=0;padding=9px;">
+<!-- <div style="position:fixed;top=0;left=0;padding=9px;">
 	<a href="#" onclick="javascript:startTour();">Click Here for a TOUR!!</a>
-</div>
+</div> -->
 
 <section class="content nofold">
-	<div class="container">
+	
+	<div class="container no-padding">
 		<div class="top_info col-md-12 ">
 			<h2>OUR DATA</h2>
 			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, rerum, nemo, reiciendis, a consequuntur provident ut modi minima ullam omnis ducimus maxime officiis doloribus quod ex accusantium perspiciatis illo consectetur.</span>
 			<a href="{{ url_for('submit')}} " class="btn">Contribute by submitting some data</a>
 		</div>
-		
-		<div id="collectiondata" class="collection col-md-12 no-padding">
-			<div id="searchbox" class="col-md-12 no-padding">
-				<div class="pull-left">
-					<label for="searchfor">LOOKING FOR:</label><input name="searchfor" class="search" placeholder="filter your search" />
-				</div>
-				<div class="pull-right">
-					<button id="sortNames" class="sort btn" data-sort="datatitle" styl><span>Sort by </span> Title</button>
-					<button id="sortPos" class="sort btn" data-sort="datatype"><span>Sort by </span> Category</button>
-					<div class="btn-group">
-						<button id="sortInst" class="sort btn" data-sort="datalocation"><span>Sort by </span> Institute</button>
-						<button class="btn dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li><a tabindex="-1" href="#">CERN</a></li>
-							<li><a tabindex="-1" href="#">SLAC</a></li>
-							<li><a tabindex="-1" href="#">DESY</a></li> 
-						</ul>
-					</div>
+	</div>
+
+	<div class="contenttitle">
+		<div id="searchbox" class="container">
+			<div class="pull-left">
+				<label for="searchfor">LOOKING FOR:</label><input name="searchfor" class="search" placeholder="filter your search" style="height:35px;font-size:13px;"/>
+			</div>
+			<div class="pull-right">
+				<button id="sortNames" class="sort btn" data-sort="datatitle" >Title</button>
+				<button id="sortPos" class="sort btn" data-sort="datatype">Category</button>
+				<div class="btn-group">
+					<button id="sortInst" class="sort btn" data-sort="datalocation">Institute</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="#">CERN</a></li>
+						<li><a tabindex="-1" href="#">SLAC</a></li>
+						<li><a tabindex="-1" href="#">DESY</a></li> 
+					</ul>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="container no-padding">	
+		<div id="collectiondata" class="collection col-md-12 no-padding">
+			
 			<div class="list collection_data col-md-12 no-padding">
 				<div id="collectionbox" class="head">
 					<ul>
@@ -160,8 +166,10 @@
 {% endblock page_body %}
 
 {% block javascript %}
+	
+	{{ super() }}
 <script type="text/javascript">
-
+	
 
 	function startTour(){
 	var intro = introJs();

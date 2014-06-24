@@ -1,0 +1,5 @@
+.row .well {
+	border-radius: 0;
+	box-shadow: 0 0 2px #ccc;
+	border: 0;
+}
